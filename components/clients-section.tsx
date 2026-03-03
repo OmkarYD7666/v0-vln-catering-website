@@ -15,6 +15,7 @@ const corporateClients = [
   "Michelin EON IT Park",
   "ABIL",
   "Panchshil Tech Park (ITPP)",
+  "Pentybawes ITPP",
 ]
 
 const clientCategories = [
@@ -96,7 +97,7 @@ export default function ClientsSection() {
           <div className="relative">
             <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-20 bg-gradient-to-r from-background to-transparent" />
             <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-20 bg-gradient-to-l from-background to-transparent" />
-            <div className="flex animate-[scroll_20s_linear_infinite] gap-8">
+            <div className="flex animate-marquee gap-8">
               {[...allClients, ...allClients].map((client, idx) => (
                 <div
                   key={`${client}-${idx}`}

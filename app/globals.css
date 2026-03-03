@@ -43,7 +43,7 @@
 
 @theme inline {
   --font-sans: 'Playfair Display', 'Georgia', serif;
-  --font-mono: 'Inter', 'Geist Mono', monospace;
+  --font-mono: 'Inter', 'Helvetica Neue', sans-serif;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -172,4 +172,25 @@ html {
 /* Video overlay */
 .video-overlay {
   background: linear-gradient(to bottom, rgba(10,8,5,0.7) 0%, rgba(10,8,5,0.4) 40%, rgba(10,8,5,0.7) 100%);
+}
+
+/* Client marquee scroll */
+@keyframes marquee-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee-scroll 25s linear infinite;
+}
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Subtle float animation */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+.animate-float {
+  animation: float 3s ease-in-out infinite;
 }
