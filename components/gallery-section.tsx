@@ -118,6 +118,9 @@ export default function GallerySection() {
                     alt={img.alt}
                     fill
                     className="object-cover transition-transform duration-700 group-hover:scale-110"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1536px) 25vw, 25vw"
+                    quality={85}
+                    loading="lazy"
                   />
                   <div className="absolute inset-0 bg-black/0 transition-all duration-300 group-hover:bg-black/30" />
                   <div className="absolute inset-0 flex items-end p-4 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
@@ -153,6 +156,8 @@ export default function GallerySection() {
               width={1200}
               height={800}
               className="h-auto max-h-[85vh] w-auto object-contain"
+              quality={90}
+              priority
             />
           </div>
         </div>

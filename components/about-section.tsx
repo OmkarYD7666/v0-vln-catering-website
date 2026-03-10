@@ -90,6 +90,9 @@ export default function AboutSection() {
                 width={700}
                 height={500}
                 className="h-auto w-full object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                quality={85}
+                loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-darker-bg/60 to-transparent" />
             </div>

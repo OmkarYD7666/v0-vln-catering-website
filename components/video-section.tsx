@@ -68,6 +68,7 @@ function VideoCard({
           playsInline
           poster={video.poster}
           preload="none"
+          loading="lazy"
           className="h-full w-full object-cover"
           onEnded={() => setIsPlaying(false)}
         >

@@ -30,6 +30,7 @@ export default function HeroSection() {
           muted
           playsInline
           poster="/images/hero-buffet.jpg"
+          preload="metadata"
           className="h-full w-full object-cover"
         >
           <source

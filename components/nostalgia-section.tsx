@@ -27,6 +27,9 @@ export default function NostalgiaSection() {
           alt="Authentic Indian thali"
           fill
           className="object-cover"
+          sizes="100vw"
+          quality={80}
+          priority
         />
         <div className="absolute inset-0 bg-black/70" />
 

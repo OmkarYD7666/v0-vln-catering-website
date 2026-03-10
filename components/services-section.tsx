@@ -119,6 +119,9 @@ export default function ServicesSection() {
                   alt={service.title}
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-110"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  quality={80}
+                  loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-card via-card/20 to-transparent" />
                 <div className="absolute bottom-4 left-4 flex h-12 w-12 items-center justify-center rounded-sm border border-gold/30 bg-card/80 backdrop-blur-sm">
