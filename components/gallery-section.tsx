@@ -10,6 +10,11 @@ const galleryImages = [
     span: "md:col-span-2 md:row-span-2",
   },
   {
+    src: "/images/wedding-reception.jpg",
+    alt: "Grand wedding catering reception setup",
+    span: "md:col-span-2",
+  },
+  {
     src: "/images/paneer-dish.jpg",
     alt: "Paneer tikka masala in copper bowl",
     span: "",
@@ -25,9 +30,19 @@ const galleryImages = [
     span: "md:col-span-2",
   },
   {
+    src: "/images/chef-plating.jpg",
+    alt: "Chef carefully plating gourmet dishes",
+    span: "",
+  },
+  {
     src: "/images/biryani.jpg",
     alt: "Fragrant vegetable biryani in copper handi",
     span: "",
+  },
+  {
+    src: "/images/corporate-catering.jpg",
+    alt: "Premium corporate event catering",
+    span: "md:col-span-2",
   },
   {
     src: "/images/dal-tadka.jpg",
@@ -40,6 +55,11 @@ const galleryImages = [
     span: "",
   },
   {
+    src: "/images/appetizer-spread.jpg",
+    alt: "Elegant appetizer and starter platter",
+    span: "",
+  },
+  {
     src: "/images/dessert-counter.jpg",
     alt: "Luxurious dessert counter display",
     span: "md:col-span-2",
@@ -48,6 +68,16 @@ const galleryImages = [
     src: "/images/thali.jpg",
     alt: "Traditional Indian thali",
     span: "",
+  },
+  {
+    src: "/images/curry-preparation.jpg",
+    alt: "Chef preparing aromatic curry in kitchen",
+    span: "",
+  },
+  {
+    src: "/images/banquet-hall.jpg",
+    alt: "Grand banquet hall with luxurious setup",
+    span: "md:col-span-2",
   },
 ]
 
