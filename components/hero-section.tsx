@@ -5,10 +5,10 @@ import Image from "next/image"
 import { ChevronDown } from "lucide-react"
 
 const heroStats = [
-  { value: "15+", label: "Years of Excellence" },
-  { value: "500+", label: "Events Catered" },
-  { value: "50+", label: "Corporate Partners" },
-  { value: "ISO", label: "Certified Quality" },
+  { value: "25+", label: "Years of Excellence" },
+  { value: "150+", label: "Meals Daily" },
+  { value: "35+", label: "Skilled Chefs" },
+  { value: "20+", label: "Corporate Partners" },
 ]
 
 export default function HeroSection() {
@@ -34,7 +34,7 @@ export default function HeroSection() {
           className="h-full w-full object-cover"
         >
           <source
-            src="https://videos.pexels.com/video-files/3195394/3195394-uhd_2560_1440_25fps.mp4"
+            src="https://videos.pexels.com/video-files/8951886/8951886-uhd_2560_1440_30fps.mp4"
             type="video/mp4"
           />
         </video>

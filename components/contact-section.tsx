@@ -13,29 +13,29 @@ const contactMethods = [
   {
     icon: Phone,
     label: "Call Us",
-    value: "+91 98765 43210",
-    href: "tel:+919876543210",
+    value: "+91 88888 72700",
+    href: "tel:+918888872700",
     description: "Mon-Sat, 9 AM - 9 PM",
   },
   {
     icon: MessageCircle,
     label: "WhatsApp",
-    value: "+91 98765 43210",
-    href: "https://wa.me/919876543210?text=Hello%20VLN%20Catering!%20I%20would%20like%20to%20inquire%20about%20your%20catering%20services.",
+    value: "+91 96731 30070",
+    href: "https://wa.me/919673130070?text=Hello%20VLN%20Catering!%20I%20would%20like%20to%20inquire%20about%20your%20catering%20services.",
     description: "Quick response guaranteed",
   },
   {
     icon: Mail,
     label: "Email Us",
-    value: "info@vlncatering.com",
-    href: "mailto:info@vlncatering.com",
+    value: "operations@vln.com",
+    href: "mailto:operations@vln.com",
     description: "We reply within 24 hours",
   },
   {
     icon: MapPin,
     label: "Visit Us",
-    value: "Pune, Maharashtra",
-    href: "https://maps.google.com/?q=18.5204,73.8567",
+    value: "Anand Nagar Lane No.03 Wadgaon Sheri Pune 411014",
+    href: "https://maps.google.com/?q=Anand+Nagar+Lane+No.03+Wadgaon+Sheri+Pune+411014",
     description: "Walk-in consultations welcome",
   },
 ]
@@ -151,14 +151,14 @@ export default function ContactSection() {
           >
             <div className="relative overflow-hidden rounded-sm border border-border/30">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d242117.68079552424!2d73.72287857432396!3d18.524600699786787!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bf2e67461101%3A0x828d43bf9d9ee343!2sPune%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3779.5438903428254!2d73.86453987520405!3d18.577611682498568!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c4e5d5d5d5d5%3A0x5d5d5d5d5d5d5d5d!2sWadgaon%20Sheri%2C%20Pune!5e0!3m2!1sen!2sin!4v1700000000000"
                 width="100%"
                 height="400"
                 style={{ border: 0, filter: "invert(90%) hue-rotate(180deg) brightness(0.9) contrast(1.2)" }}
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="VLN Catering Location - Pune, Maharashtra"
+                title="VLN Catering Location - Anand Nagar Lane No.03 Wadgaon Sheri Pune"
                 className="rounded-sm"
               />
               {/* Map overlay info */}
@@ -173,7 +173,7 @@ export default function ContactSection() {
                       Pune, Maharashtra, India
                     </p>
                     <a
-                      href="https://maps.google.com/?q=18.5204,73.8567"
+                      href="https://maps.google.com/?q=Anand+Nagar+Lane+No.03+Wadgaon+Sheri+Pune+411014"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="mt-2 inline-block font-mono text-xs text-gold underline underline-offset-4 transition-colors hover:text-gold-light"
@@ -187,7 +187,7 @@ export default function ContactSection() {
 
             {/* Quick WhatsApp CTA */}
             <a
-              href="https://wa.me/919876543210?text=Hello%20VLN%20Catering!%20I%20would%20like%20to%20inquire%20about%20your%20catering%20services."
+              href="https://wa.me/919673130070?text=Hello%20VLN%20Catering!%20I%20would%20like%20to%20inquire%20about%20your%20catering%20services."
               target="_blank"
               rel="noopener noreferrer"
               className="mt-6 flex items-center justify-center gap-3 rounded-sm bg-[#25D366] px-6 py-4 font-mono text-sm uppercase tracking-wider text-white transition-all hover:bg-[#22bf5b] hover:shadow-lg hover:shadow-[#25D366]/20"

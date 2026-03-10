@@ -45,9 +45,12 @@ export default function Footer() {
                 </p>
               </div>
             </div>
-            <p className="mb-6 font-mono text-xs leading-relaxed text-muted-foreground">
+            <p className="mb-4 font-mono text-xs leading-relaxed text-muted-foreground">
               ISO Certified premium catering services delivering authentic Indian
               vegetarian cuisine to Pune&apos;s finest hotels, corporates, and events since 2009.
+            </p>
+            <p className="mb-6 font-mono text-[10px] text-muted-foreground">
+              <span className="text-gold font-semibold">Managing Director:</span> Mr. Gajanan Sharma
             </p>
             <div className="flex items-center gap-2 rounded-sm border border-gold/20 bg-gold/5 px-3 py-2 w-fit">
               <div className="h-2 w-2 rounded-full bg-gold" />
@@ -105,38 +108,38 @@ export default function Footer() {
             <ul className="flex flex-col gap-4">
               <li>
                 <a
-                  href="tel:+919876543210"
+                  href="tel:+918888872700"
                   className="flex items-center gap-3 font-mono text-xs text-muted-foreground transition-colors hover:text-gold"
                 >
                   <Phone className="h-4 w-4 flex-shrink-0 text-gold/60" />
-                  +91 98765 43210
+                  +91 88888 72700
                 </a>
               </li>
               <li>
                 <a
-                  href="https://wa.me/919876543210"
+                  href="https://wa.me/919673130070"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 font-mono text-xs text-muted-foreground transition-colors hover:text-gold"
                 >
                   <MessageCircle className="h-4 w-4 flex-shrink-0 text-gold/60" />
-                  WhatsApp Us
+                  +91 96731 30070
                 </a>
               </li>
               <li>
                 <a
-                  href="mailto:info@vlncatering.com"
+                  href="mailto:operations@vln.com"
                   className="flex items-center gap-3 font-mono text-xs text-muted-foreground transition-colors hover:text-gold"
                 >
                   <Mail className="h-4 w-4 flex-shrink-0 text-gold/60" />
-                  info@vlncatering.com
+                  operations@vln.com
                 </a>
               </li>
               <li>
                 <div className="flex items-start gap-3">
                   <MapPin className="mt-0.5 h-4 w-4 flex-shrink-0 text-gold/60" />
                   <span className="font-mono text-xs text-muted-foreground">
-                    Pune, Maharashtra, India
+                    Anand Nagar Lane No.03, Wadgaon Sheri, Pune 411014
                   </span>
                 </div>
               </li>

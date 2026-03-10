@@ -21,7 +21,7 @@ const features = [
     icon: Users,
     title: "Expert Team",
     description:
-      "A team of 200+ skilled chefs, servers, and event coordinators delivering flawless execution at scale.",
+      "A team of 35+ skilled chefs, servers, and event coordinators delivering flawless execution at scale.",
   },
   {
     icon: Award,
@@ -98,7 +98,7 @@ export default function AboutSection() {
             </div>
             {/* Floating card */}
             <div className="absolute -bottom-6 -right-4 rounded-sm border border-gold/20 bg-card p-5 shadow-xl shadow-black/30 md:-right-8">
-              <p className="text-gold-gradient font-sans text-3xl font-bold">15+</p>
+              <p className="text-gold-gradient font-sans text-3xl font-bold">25+</p>
               <p className="font-mono text-xs uppercase tracking-wider text-muted-foreground">
                 Years in Business
               </p>
@@ -114,7 +114,7 @@ export default function AboutSection() {
             }`}
           >
             <h3 className="mb-6 font-sans text-2xl font-semibold text-cream md:text-3xl">
-              Crafting Unforgettable <span className="text-gold">Culinary Experiences</span> Since 2009
+              Crafting Unforgettable <span className="text-gold">Culinary Experiences</span> Since 1999
             </h3>
             <p className="mb-6 font-mono text-sm leading-relaxed text-muted-foreground">
               VLN Catering and Event Management has been the preferred catering partner for
@@ -124,7 +124,7 @@ export default function AboutSection() {
             </p>
             <p className="mb-10 font-mono text-sm leading-relaxed text-muted-foreground">
               Our commitment to hygiene, quality, and the art of traditional Indian cooking
-              has earned us ISO certification and the trust of over 50 corporate clients
+              has earned us ISO certification and the trust of over 20 corporate clients
               across Pune. Every dish we serve is a homage to India&apos;s rich culinary
               heritage, prepared with love and served with pride.
             </p>
