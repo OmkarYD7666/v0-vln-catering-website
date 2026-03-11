@@ -56,18 +56,6 @@ export default function HeroSection() {
             </span>
           </div>
 
-          {/* Logo */}
-          <div className="mb-8">
-            <Image
-              src="/images/logo.png"
-              alt="VLN Caterers"
-              width={180}
-              height={180}
-              className="mx-auto h-32 w-auto lg:h-44"
-              priority
-            />
-          </div>
-
           {/* Headline */}
           <h1 className="mb-4 font-sans text-4xl font-bold leading-tight tracking-tight text-cream md:text-6xl lg:text-7xl">
             <span className="text-gold-gradient">Exquisite</span> Indian Flavours
