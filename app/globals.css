@@ -194,3 +194,17 @@ html {
 .animate-float {
   animation: float 3s ease-in-out infinite;
 }
+
+/* Cinematic zoom animation for video */
+@keyframes cinematic-zoom {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.05);
+  }
+}
+.video-zoom {
+  animation: cinematic-zoom 12s ease-in-out infinite;
+  transform-origin: center;
+}
