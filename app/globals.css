@@ -4,27 +4,27 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* VLN Catering Theme - Black, Gold, Red, Cream */
-  --background: oklch(0.10 0.005 60);
-  --foreground: oklch(0.92 0.02 85);
-  --card: oklch(0.14 0.005 60);
-  --card-foreground: oklch(0.92 0.02 85);
-  --popover: oklch(0.14 0.005 60);
-  --popover-foreground: oklch(0.92 0.02 85);
-  --primary: oklch(0.78 0.12 85);
-  --primary-foreground: oklch(0.10 0.005 60);
-  --secondary: oklch(0.18 0.008 60);
-  --secondary-foreground: oklch(0.78 0.12 85);
-  --muted: oklch(0.18 0.008 60);
-  --muted-foreground: oklch(0.62 0.04 80);
-  --accent: oklch(0.55 0.22 25);
-  --accent-foreground: oklch(0.98 0.01 85);
+  /* VLN Catering Theme - Deep Navy Blue Luxury */
+  --background: oklch(0.18 0.04 250);          /* Primary: #0E1A2B - Deep navy blue */
+  --foreground: oklch(0.98 0 0);               /* Text: #FFFFFF - White */
+  --card: oklch(0.24 0.045 250);               /* Secondary: #16263C - Lighter navy */
+  --card-foreground: oklch(0.98 0 0);
+  --popover: oklch(0.24 0.045 250);
+  --popover-foreground: oklch(0.98 0 0);
+  --primary: oklch(0.72 0.12 85);              /* Gold accent: #C9A227 */
+  --primary-foreground: oklch(0.18 0.04 250);
+  --secondary: oklch(0.24 0.045 250);          /* Secondary navy */
+  --secondary-foreground: oklch(0.72 0.12 85);
+  --muted: oklch(0.28 0.04 250);               /* Muted navy */
+  --muted-foreground: oklch(0.70 0.02 250);    /* Muted text */
+  --accent: oklch(0.72 0.12 85);               /* Gold accent */
+  --accent-foreground: oklch(0.18 0.04 250);
   --destructive: oklch(0.55 0.22 25);
-  --destructive-foreground: oklch(0.98 0.01 85);
-  --border: oklch(0.25 0.02 70);
-  --input: oklch(0.22 0.015 65);
-  --ring: oklch(0.78 0.12 85);
-  --chart-1: oklch(0.78 0.12 85);
+  --destructive-foreground: oklch(0.98 0 0);
+  --border: oklch(0.30 0.04 250);              /* Border navy */
+  --input: oklch(0.26 0.04 250);
+  --ring: oklch(0.72 0.12 85);
+  --chart-1: oklch(0.72 0.12 85);
   --chart-2: oklch(0.55 0.22 25);
   --chart-3: oklch(0.62 0.08 80);
   --chart-4: oklch(0.70 0.10 70);
@@ -32,13 +32,13 @@
   --radius: 0.5rem;
 
   /* Custom VLN tokens */
-  --gold: oklch(0.78 0.12 85);
-  --gold-light: oklch(0.85 0.10 85);
-  --gold-dark: oklch(0.65 0.12 80);
+  --gold: oklch(0.72 0.12 85);                 /* #C9A227 - Gold accent */
+  --gold-light: oklch(0.80 0.10 85);           /* Lighter gold */
+  --gold-dark: oklch(0.60 0.12 80);            /* Darker gold */
   --crimson: oklch(0.55 0.22 25);
-  --cream: oklch(0.95 0.02 85);
-  --dark-bg: oklch(0.10 0.005 60);
-  --darker-bg: oklch(0.07 0.003 60);
+  --cream: oklch(0.98 0 0);                    /* White for text */
+  --dark-bg: oklch(0.18 0.04 250);             /* Primary navy: #0E1A2B */
+  --darker-bg: oklch(0.14 0.035 250);          /* Darker navy for alternating sections */
 }
 
 @theme inline {
@@ -91,12 +91,12 @@
   }
 }
 
-/* Custom scrollbar */
+/* Custom scrollbar - Navy blue theme */
 ::-webkit-scrollbar {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--darker-bg);
+  background: oklch(0.14 0.035 250); /* Darker navy */
 }
 ::-webkit-scrollbar-thumb {
   background: var(--gold-dark);
@@ -156,9 +156,9 @@ html {
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
 
-/* Gold border glow */
+/* Gold border glow - Updated for #C9A227 */
 .gold-glow {
-  box-shadow: 0 0 20px rgba(184, 156, 90, 0.15);
+  box-shadow: 0 0 20px rgba(201, 162, 39, 0.15);
 }
 
 /* Parallax image */
@@ -169,9 +169,9 @@ html {
   background-size: cover;
 }
 
-/* Video overlay */
+/* Video overlay - Navy blue theme */
 .video-overlay {
-  background: linear-gradient(to bottom, rgba(10,8,5,0.7) 0%, rgba(10,8,5,0.4) 40%, rgba(10,8,5,0.7) 100%);
+  background: linear-gradient(to bottom, rgba(14,26,43,0.8) 0%, rgba(14,26,43,0.5) 40%, rgba(14,26,43,0.8) 100%);
 }
 
 /* Client marquee scroll */
