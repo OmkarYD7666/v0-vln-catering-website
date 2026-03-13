@@ -22,7 +22,7 @@ export default function HeroSection() {
   return (
     <section id="home" className="relative min-h-screen overflow-hidden">
       {/* Video Background */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 overflow-hidden">
         <video
           ref={videoRef}
           autoPlay
@@ -31,8 +31,13 @@ export default function HeroSection() {
           playsInline
           poster="/images/hero-buffet.jpg"
           preload="metadata"
-          className="h-full w-full object-cover"
+          className="video-zoom h-full w-full object-cover"
         >
+          <source
+            src="https://videos.pexels.com/video-files/3944659/3944659-sd_640_360_30fps.mp4"
+            type="video/mp4"
+          />
+          {/* Fallback source for catering events */}
           <source
             src="https://videos.pexels.com/video-files/8951886/8951886-uhd_2560_1440_30fps.mp4"
             type="video/mp4"
@@ -54,18 +59,6 @@ export default function HeroSection() {
             <span className="font-mono text-xs uppercase tracking-[0.25em] text-gold">
               ISO Certified
             </span>
-          </div>
-
-          {/* Logo */}
-          <div className="mb-8">
-            <Image
-              src="/images/logo.png"
-              alt="VLN Caterers"
-              width={180}
-              height={180}
-              className="mx-auto h-32 w-auto lg:h-44"
-              priority
-            />
           </div>
 
           {/* Headline */}
