@@ -4,25 +4,25 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* VLN Catering Theme - Burgundy, Gold, Cream */
-  --background: oklch(0.12 0.10 340);
-  --foreground: oklch(0.92 0.02 85);
-  --card: oklch(0.17 0.12 335);
-  --card-foreground: oklch(0.92 0.02 85);
-  --popover: oklch(0.17 0.12 335);
-  --popover-foreground: oklch(0.92 0.02 85);
+  /* VLN Catering Theme - Dark Forest Green, Gold, Cream */
+  --background: oklch(0.16 0.08 165);
+  --foreground: oklch(0.98 0.01 85);
+  --card: oklch(0.20 0.08 165);
+  --card-foreground: oklch(0.98 0.01 85);
+  --popover: oklch(0.20 0.08 165);
+  --popover-foreground: oklch(0.98 0.01 85);
   --primary: oklch(0.78 0.12 85);
-  --primary-foreground: oklch(0.12 0.10 340);
-  --secondary: oklch(0.17 0.12 335);
+  --primary-foreground: oklch(0.16 0.08 165);
+  --secondary: oklch(0.24 0.08 165);
   --secondary-foreground: oklch(0.78 0.12 85);
-  --muted: oklch(0.25 0.08 340);
-  --muted-foreground: oklch(0.62 0.04 80);
+  --muted: oklch(0.30 0.06 165);
+  --muted-foreground: oklch(0.82 0.02 85);
   --accent: oklch(0.55 0.22 25);
   --accent-foreground: oklch(0.98 0.01 85);
   --destructive: oklch(0.55 0.22 25);
   --destructive-foreground: oklch(0.98 0.01 85);
-  --border: oklch(0.25 0.10 340);
-  --input: oklch(0.17 0.12 335);
+  --border: oklch(0.28 0.08 165);
+  --input: oklch(0.20 0.08 165);
   --ring: oklch(0.78 0.12 85);
   --chart-1: oklch(0.78 0.12 85);
   --chart-2: oklch(0.55 0.22 25);
@@ -37,8 +37,8 @@
   --gold-dark: oklch(0.65 0.12 80);
   --crimson: oklch(0.55 0.22 25);
   --cream: oklch(0.95 0.02 85);
-  --dark-bg: oklch(0.12 0.10 340);
-  --darker-bg: oklch(0.08 0.08 340);
+  --dark-bg: oklch(0.16 0.08 165);
+  --darker-bg: oklch(0.12 0.06 165);
 }
 
 @theme inline {
@@ -171,7 +171,7 @@ html {
 
 /* Video overlay */
 .video-overlay {
-  background: linear-gradient(to bottom, rgba(10,8,5,0.7) 0%, rgba(10,8,5,0.4) 40%, rgba(10,8,5,0.7) 100%);
+  background: linear-gradient(to bottom, rgba(15,42,36,0.7) 0%, rgba(15,42,36,0.4) 40%, rgba(15,42,36,0.7) 100%);
 }
 
 /* Client marquee scroll */
