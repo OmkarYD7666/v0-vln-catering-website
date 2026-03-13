@@ -9,6 +9,22 @@ import {
   type CarouselApi,
 } from "@/components/ui/carousel"
 
+// Client logos data
+const clients = [
+  { name: "Hyatt Pune", category: "Hotel" },
+  { name: "Four Points by Sheraton", category: "Hotel" },
+  { name: "JW Marriott", category: "Hotel" },
+  { name: "The Westin", category: "Hotel" },
+  { name: "Novotel", category: "Hotel" },
+  { name: "Conrad Pune", category: "Hotel" },
+  { name: "Amdocs", category: "Corporate" },
+  { name: "Infosys", category: "Corporate" },
+  { name: "Wipro", category: "Corporate" },
+  { name: "Tech Mahindra", category: "Corporate" },
+  { name: "Michelin", category: "Corporate" },
+  { name: "SLB", category: "Corporate" },
+]
+
 const testimonials = [
   {
     id: 1,
@@ -101,6 +117,32 @@ const testimonials = [
     initials: "DI",
   },
 ]
+
+function ClientLogo({ client, index, isVisible }: { client: typeof clients[0]; index: number; isVisible: boolean }) {
+  return (
+    <div
+      className={`group flex flex-col items-center justify-center rounded-lg border border-border/20 bg-card/50 p-6 transition-all duration-500 hover:border-[#C9A227]/30 hover:bg-card ${
+        isVisible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
+      }`}
+      style={{ transitionDelay: `${index * 50}ms` }}
+    >
+      {/* Logo placeholder with initials */}
+      <div className="mb-3 flex h-16 w-full items-center justify-center grayscale transition-all duration-300 group-hover:grayscale-0">
+        <div className="flex h-14 w-14 items-center justify-center rounded-full border border-[#C9A227]/20 bg-[#C9A227]/5 transition-all duration-300 group-hover:border-[#C9A227]/40 group-hover:bg-[#C9A227]/10">
+          <span className="font-sans text-lg font-bold text-cream/50 transition-colors duration-300 group-hover:text-[#C9A227]">
+            {client.name.split(' ').map(w => w[0]).join('').slice(0, 2)}
+          </span>
+        </div>
+      </div>
+      <span className="text-center font-sans text-sm font-medium text-cream/60 transition-colors duration-300 group-hover:text-cream">
+        {client.name}
+      </span>
+      <span className="mt-1 font-mono text-[10px] uppercase tracking-wider text-[#C9A227]/40 transition-colors duration-300 group-hover:text-[#C9A227]/70">
+        {client.category}
+      </span>
+    </div>
+  )
+}
 
 function StarRating({ rating }: { rating: number }) {
   return (
@@ -220,85 +262,126 @@ export default function ClientsSection() {
       <div className="absolute left-0 top-0 h-px w-full bg-gradient-to-r from-transparent via-[#C9A227]/30 to-transparent" />
 
       <div className="mx-auto max-w-7xl px-6">
-        {/* Section header */}
+        {/* Our Clients - Logo Grid Section */}
         <div
-          className={`mb-16 text-center transition-all duration-700 lg:mb-20 ${
+          className={`mb-20 transition-all duration-700 ${
             isVisible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
           }`}
         >
-          <span className="mb-4 inline-block font-mono text-xs uppercase tracking-[0.3em] text-[#C9A227]">
-            Testimonials
-          </span>
-          <h2 className="mb-6 font-sans text-3xl font-bold text-cream md:text-5xl">
-            What Our <span className="text-gold-gradient">Clients Say</span>
-          </h2>
-          <div className="mx-auto flex items-center justify-center gap-3">
-            <div className="h-px w-12 bg-[#C9A227]/40" />
-            <div className="h-1.5 w-1.5 rotate-45 bg-[#C9A227]" />
-            <div className="h-px w-12 bg-[#C9A227]/40" />
+          {/* Section header */}
+          <div className="mb-12 text-center">
+            <span className="mb-4 inline-block font-mono text-xs uppercase tracking-[0.3em] text-[#C9A227]">
+              Trusted Partners
+            </span>
+            <h2 className="mb-6 font-sans text-3xl font-bold text-cream md:text-5xl">
+              Our <span className="text-gold-gradient">Clients</span>
+            </h2>
+            <div className="mx-auto flex items-center justify-center gap-3">
+              <div className="h-px w-12 bg-[#C9A227]/40" />
+              <div className="h-1.5 w-1.5 rotate-45 bg-[#C9A227]" />
+              <div className="h-px w-12 bg-[#C9A227]/40" />
+            </div>
+            <p className="mx-auto mt-6 max-w-2xl font-mono text-sm leading-relaxed text-muted-foreground">
+              Proudly serving Pune&apos;s finest hotels, corporate organizations, and distinguished families for over 20 years.
+            </p>
           </div>
-          <p className="mx-auto mt-6 max-w-2xl font-mono text-sm leading-relaxed text-muted-foreground">
-            Discover why Pune&apos;s most discerning hosts trust VLN Catering to create
-            unforgettable culinary experiences for their most important occasions.
-          </p>
-        </div>
 
-        {/* Testimonials Carousel */}
-        <div
-          className={`relative transition-all delay-200 duration-700 ${
-            isVisible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
-          }`}
-        >
-          <Carousel
-            setApi={setApi}
-            opts={{
-              align: "start",
-              loop: true,
-            }}
-            className="w-full"
-          >
-            <CarouselContent className="-ml-4">
-              {testimonials.map((testimonial) => (
-                <CarouselItem
-                  key={testimonial.id}
-                  className="pl-4 basis-full sm:basis-1/2 lg:basis-1/4"
-                >
-                  <TestimonialCard testimonial={testimonial} />
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-          </Carousel>
-
-          {/* Navigation Arrows */}
-          <button
-            onClick={scrollPrev}
-            className="absolute -left-4 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-border/50 bg-card/80 text-cream/70 backdrop-blur-sm transition-all hover:border-[#C9A227]/50 hover:bg-card hover:text-[#C9A227] lg:-left-12"
-            aria-label="Previous testimonial"
-          >
-            <ChevronLeft className="h-5 w-5" />
-          </button>
-          <button
-            onClick={scrollNext}
-            className="absolute -right-4 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-border/50 bg-card/80 text-cream/70 backdrop-blur-sm transition-all hover:border-[#C9A227]/50 hover:bg-card hover:text-[#C9A227] lg:-right-12"
-            aria-label="Next testimonial"
-          >
-            <ChevronRight className="h-5 w-5" />
-          </button>
-
-          {/* Pagination Dots */}
-          <div className="mt-8 flex items-center justify-center gap-2">
-            {Array.from({ length: count }).map((_, index) => (
-              <button
-                key={index}
-                onClick={() => scrollTo(index)}
-                className={`h-2 rounded-full transition-all duration-300 ${
-                  index === current
-                    ? "w-8 bg-[#C9A227]"
-                    : "w-2 bg-[#C9A227]/30 hover:bg-[#C9A227]/50"
-                }`}
-                aria-label={`Go to slide ${index + 1}`}
+          {/* Client Logos Grid */}
+          <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
+            {clients.map((client, index) => (
+              <ClientLogo
+                key={client.name}
+                client={client}
+                index={index}
+                isVisible={isVisible}
               />
             ))}
+          </div>
+        </div>
+
+        {/* Divider */}
+        <div className="mb-20 flex items-center justify-center">
+          <div className="h-px w-full max-w-md bg-gradient-to-r from-transparent via-[#C9A227]/20 to-transparent" />
+        </div>
+
+        {/* Testimonials Section */}
+        <div
+          className={`transition-all delay-300 duration-700 ${
+            isVisible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
+          }`}
+        >
+          {/* Section header */}
+          <div className="mb-16 text-center">
+            <span className="mb-4 inline-block font-mono text-xs uppercase tracking-[0.3em] text-[#C9A227]">
+              Testimonials
+            </span>
+            <h2 className="mb-6 font-sans text-3xl font-bold text-cream md:text-5xl">
+              What Our <span className="text-gold-gradient">Clients Say</span>
+            </h2>
+            <div className="mx-auto flex items-center justify-center gap-3">
+              <div className="h-px w-12 bg-[#C9A227]/40" />
+              <div className="h-1.5 w-1.5 rotate-45 bg-[#C9A227]" />
+              <div className="h-px w-12 bg-[#C9A227]/40" />
+            </div>
+            <p className="mx-auto mt-6 max-w-2xl font-mono text-sm leading-relaxed text-muted-foreground">
+              Discover why Pune&apos;s most discerning hosts trust VLN Catering to create
+              unforgettable culinary experiences for their most important occasions.
+            </p>
+          </div>
+
+          {/* Testimonials Carousel */}
+          <div className="relative">
+            <Carousel
+              setApi={setApi}
+              opts={{
+                align: "start",
+                loop: true,
+              }}
+              className="w-full"
+            >
+              <CarouselContent className="-ml-4">
+                {testimonials.map((testimonial) => (
+                  <CarouselItem
+                    key={testimonial.id}
+                    className="pl-4 basis-full sm:basis-1/2 lg:basis-1/4"
+                  >
+                    <TestimonialCard testimonial={testimonial} />
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+            </Carousel>
+
+            {/* Navigation Arrows */}
+            <button
+              onClick={scrollPrev}
+              className="absolute -left-4 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-border/50 bg-card/80 text-cream/70 backdrop-blur-sm transition-all hover:border-[#C9A227]/50 hover:bg-card hover:text-[#C9A227] lg:-left-12"
+              aria-label="Previous testimonial"
+            >
+              <ChevronLeft className="h-5 w-5" />
+            </button>
+            <button
+              onClick={scrollNext}
+              className="absolute -right-4 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-border/50 bg-card/80 text-cream/70 backdrop-blur-sm transition-all hover:border-[#C9A227]/50 hover:bg-card hover:text-[#C9A227] lg:-right-12"
+              aria-label="Next testimonial"
+            >
+              <ChevronRight className="h-5 w-5" />
+            </button>
+
+            {/* Pagination Dots */}
+            <div className="mt-8 flex items-center justify-center gap-2">
+              {Array.from({ length: count }).map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => scrollTo(index)}
+                  className={`h-2 rounded-full transition-all duration-300 ${
+                    index === current
+                      ? "w-8 bg-[#C9A227]"
+                      : "w-2 bg-[#C9A227]/30 hover:bg-[#C9A227]/50"
+                  }`}
+                  aria-label={`Go to slide ${index + 1}`}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </div>
