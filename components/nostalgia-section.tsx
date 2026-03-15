@@ -28,7 +28,7 @@ export default function NostalgiaSection() {
           fill
           className="object-cover"
           sizes="100vw"
-          quality={80}
+          quality={75}
           priority
         />
         <div className="absolute inset-0 bg-black/70" />
