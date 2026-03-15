@@ -3,84 +3,22 @@
 import { useEffect, useRef, useState } from "react"
 import Image from "next/image"
 
-const galleryImages = [
-  {
-    src: "/images/hero-buffet.jpg",
-    alt: "Elaborate Indian buffet spread",
-    span: "md:col-span-2 md:row-span-2",
-  },
-  {
-    src: "/images/wedding-reception.jpg",
-    alt: "Grand wedding catering reception setup",
-    span: "md:col-span-2",
-  },
-  {
-    src: "/images/paneer-dish.jpg",
-    alt: "Paneer tikka masala in copper bowl",
-    span: "",
-  },
-  {
-    src: "/images/sweets.jpg",
-    alt: "Traditional Indian sweets platter",
-    span: "",
-  },
-  {
-    src: "/images/live-counter.jpg",
-    alt: "Chef at live cooking station",
-    span: "md:col-span-2",
-  },
-  {
-    src: "/images/chef-plating.jpg",
-    alt: "Chef carefully plating gourmet dishes",
-    span: "",
-  },
-  {
-    src: "/images/biryani.jpg",
-    alt: "Fragrant vegetable biryani in copper handi",
-    span: "",
-  },
-  {
-    src: "/images/corporate-catering.jpg",
-    alt: "Premium corporate event catering",
-    span: "md:col-span-2",
-  },
-  {
-    src: "/images/dal-tadka.jpg",
-    alt: "Dal tadka with aromatic tempering",
-    span: "",
-  },
-  {
-    src: "/images/chaat-counter.jpg",
-    alt: "Mumbai street food chaat counter",
-    span: "",
-  },
-  {
-    src: "/images/appetizer-spread.jpg",
-    alt: "Elegant appetizer and starter platter",
-    span: "",
-  },
-  {
-    src: "/images/dessert-counter.jpg",
-    alt: "Luxurious dessert counter display",
-    span: "md:col-span-2",
-  },
-  {
-    src: "/images/thali.jpg",
-    alt: "Traditional Indian thali",
-    span: "",
-  },
-  {
-    src: "/images/curry-preparation.jpg",
-    alt: "Chef preparing aromatic curry in kitchen",
-    span: "",
-  },
-  {
-    src: "/images/banquet-hall.jpg",
-    alt: "Grand banquet hall with luxurious setup",
-    span: "md:col-span-2",
-  },
+const galleryImages = const galleryImages = [
+  { src: "/images/gallery/image1.jpg", alt: "Catering event setup", span: "md:col-span-2 md:row-span-2" },
+  { src: "/images/gallery/image2.jpg", alt: "Indian catering buffet", span: "md:col-span-2" },
+  { src: "/images/gallery/image3.jpg", alt: "Premium catering dish", span: "" },
+  { src: "/images/gallery/image4.jpg", alt: "Live catering counter", span: "" },
+  { src: "/images/gallery/image5.jpg", alt: "Luxury catering setup", span: "md:col-span-2" },
+  { src: "/images/gallery/image6.jpg", alt: "Traditional Indian dish", span: "" },
+  { src: "/images/gallery/image7.jpg", alt: "Wedding catering arrangement", span: "" },
+  { src: "/images/gallery/image8.jpg", alt: "Event catering service", span: "md:col-span-2" },
+  { src: "/images/gallery/image9.jpg", alt: "Chef preparing dishes", span: "" },
+  { src: "/images/gallery/image10.jpg", alt: "Buffet food presentation", span: "" },
+  { src: "/images/gallery/image11.jpg", alt: "Premium catering dishes", span: "" },
+  { src: "/images/gallery/image12.jpg", alt: "Indian catering thali", span: "md:col-span-2" },
+  { src: "/images/gallery/image13.jpg", alt: "Traditional catering setup", span: "" },
+  { src: "/images/gallery/image14.jpg", alt: "Luxury food presentation", span: "" }
 ]
-
 export default function GallerySection() {
   const [isVisible, setIsVisible] = useState(false)
   const sectionRef = useRef<HTMLDivElement>(null)
