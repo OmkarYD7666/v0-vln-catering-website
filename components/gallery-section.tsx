@@ -5,79 +5,74 @@ import Image from "next/image"
 
 const galleryImages = [
   {
-    src: "/images/hero-buffet.jpg",
-    alt: "Elaborate Indian buffet spread",
+    src: "/images/gallery/image1.jpg",
+    alt: "Gallery image 1",
     span: "md:col-span-2 md:row-span-2",
   },
   {
-    src: "/images/wedding-reception.jpg",
-    alt: "Grand wedding catering reception setup",
+    src: "/images/gallery/image2.jpg",
+    alt: "Gallery image 2",
     span: "md:col-span-2",
   },
   {
-    src: "/images/paneer-dish.jpg",
-    alt: "Paneer tikka masala in copper bowl",
+    src: "/images/gallery/image3.jpg",
+    alt: "Gallery image 3",
     span: "",
   },
   {
-    src: "/images/sweets.jpg",
-    alt: "Traditional Indian sweets platter",
+    src: "/images/gallery/image4.jpg",
+    alt: "Gallery image 4",
     span: "",
   },
   {
-    src: "/images/live-counter.jpg",
-    alt: "Chef at live cooking station",
+    src: "/images/gallery/image5.jpg",
+    alt: "Gallery image 5",
     span: "md:col-span-2",
   },
   {
-    src: "/images/chef-plating.jpg",
-    alt: "Chef carefully plating gourmet dishes",
+    src: "/images/gallery/image6.jpg",
+    alt: "Gallery image 6",
     span: "",
   },
   {
-    src: "/images/biryani.jpg",
-    alt: "Fragrant vegetable biryani in copper handi",
+    src: "/images/gallery/image7.jpg",
+    alt: "Gallery image 7",
     span: "",
   },
   {
-    src: "/images/corporate-catering.jpg",
-    alt: "Premium corporate event catering",
+    src: "/images/gallery/image8.jpg",
+    alt: "Gallery image 8",
     span: "md:col-span-2",
   },
   {
-    src: "/images/dal-tadka.jpg",
-    alt: "Dal tadka with aromatic tempering",
+    src: "/images/gallery/image9.jpg",
+    alt: "Gallery image 9",
     span: "",
   },
   {
-    src: "/images/chaat-counter.jpg",
-    alt: "Mumbai street food chaat counter",
+    src: "/images/gallery/image10.jpg",
+    alt: "Gallery image 10",
     span: "",
   },
   {
-    src: "/images/appetizer-spread.jpg",
-    alt: "Elegant appetizer and starter platter",
+    src: "/images/gallery/image11.jpg",
+    alt: "Gallery image 11",
     span: "",
   },
   {
-    src: "/images/dessert-counter.jpg",
-    alt: "Luxurious dessert counter display",
+    src: "/images/gallery/image12.jpg",
+    alt: "Gallery image 12",
     span: "md:col-span-2",
   },
   {
-    src: "/images/thali.jpg",
-    alt: "Traditional Indian thali",
+    src: "/images/gallery/image13.jpg",
+    alt: "Gallery image 13",
     span: "",
   },
   {
-    src: "/images/curry-preparation.jpg",
-    alt: "Chef preparing aromatic curry in kitchen",
+    src: "/images/gallery/image14.jpg",
+    alt: "Gallery image 14",
     span: "",
-  },
-  {
-    src: "/images/banquet-hall.jpg",
-    alt: "Grand banquet hall with luxurious setup",
-    span: "md:col-span-2",
   },
 ]
 
@@ -97,8 +92,37 @@ export default function GallerySection() {
     return () => observer.disconnect()
   }, [])
 
+  // Add animation styles
+  const animationStyle = `
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-12px); }
+    }
+    @keyframes subtleRotate {
+      0%, 100% { transform: rotateZ(0deg); }
+      50% { transform: rotateZ(1deg); }
+    }
+    @keyframes flipCard {
+      0% { transform: perspective(1000px) rotateY(0deg); }
+      100% { transform: perspective(1000px) rotateY(8deg); }
+    }
+    .gallery-item {
+      animation: float 4s ease-in-out infinite, subtleRotate 6s ease-in-out infinite;
+    }
+    .gallery-item:nth-child(odd) {
+      animation-delay: 0s, -0.5s;
+    }
+    .gallery-item:nth-child(even) {
+      animation-delay: -0.5s, 0s;
+    }
+    .gallery-item:hover {
+      animation: flipCard 0.4s ease-in-out forwards;
+    }
+  `
+
   return (
     <>
+      <style>{animationStyle}</style>
       <section
         id="gallery"
         ref={sectionRef}
@@ -134,7 +158,7 @@ export default function GallerySection() {
             {galleryImages.map((img, index) => (
               <div
                 key={img.src}
-                className={`group relative cursor-pointer overflow-hidden rounded-sm ${img.span} transition-all duration-700 ${
+                className={`gallery-item group relative cursor-pointer overflow-hidden rounded-sm ${img.span} transition-all duration-700 ${
                   isVisible
                     ? "translate-y-0 opacity-100"
                     : "translate-y-8 opacity-0"
