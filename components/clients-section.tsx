@@ -15,7 +15,7 @@ const clients = [
   { name: "SLB", logo: "/logos/slb.png" },
   { name: "ABIL", logo: "/logos/abil.png" },
   { name: "Michelin", logo: "/logos/michelin.png" },
-  { name: "Amdocs", logo: "/logos/amdocs.png" },
+  { name: "Amdocs", logo: "/logos/amdocs.jpg" },
   { name: "Four Points", logo: "/logos/fourpoints.png" },
   { name: "Hyatt", logo: "/logos/hyatt.png" },
   { name: "Hyatt Regency", logo: "/logos/hyatt-regency.png" },
