@@ -117,9 +117,14 @@ const testimonials = [
 // Infinite scrolling logo carousel component
 function LogoCarousel() {
   const [isPaused, setIsPaused] = useState(false)
+  const [imageErrors, setImageErrors] = useState<Record<string, boolean>>({})
   
   // Duplicate clients array for seamless infinite scroll
   const duplicatedClients = [...clients, ...clients]
+
+  const handleImageError = (clientName: string) => {
+    setImageErrors(prev => ({ ...prev, [clientName]: true }))
+  }
 
   return (
     <div 
@@ -143,17 +148,26 @@ function LogoCarousel() {
             key={`${client.name}-${index}`}
             className="group flex min-w-[150px] flex-col items-center justify-center rounded-lg border border-border/20 bg-card/50 p-6 transition-all duration-300 hover:border-[#C9A227]/30 hover:bg-card sm:min-w-[180px] md:min-w-[200px]"
           >
-            {/* Logo image */}
+            {/* Logo image with fallback */}
             <div className="mb-3 flex h-16 w-full items-center justify-center">
-              <div className="relative h-14 w-28 grayscale transition-all duration-300 group-hover:grayscale-0">
-                <Image
-                  src={client.logo}
-                  alt={`${client.name} logo`}
-                  fill
-                  className="object-contain"
-                  sizes="(max-width: 640px) 100px, 120px"
-                />
-              </div>
+              {imageErrors[client.name] ? (
+                <div className="flex h-14 w-28 items-center justify-center rounded border border-[#C9A227]/20 bg-[#C9A227]/5 transition-all duration-300 group-hover:border-[#C9A227]/40 group-hover:bg-[#C9A227]/10">
+                  <span className="font-sans text-lg font-bold text-cream/50 transition-colors duration-300 group-hover:text-[#C9A227]">
+                    {client.name.split(' ').map(w => w[0]).join('').slice(0, 3)}
+                  </span>
+                </div>
+              ) : (
+                <div className="relative h-14 w-28 grayscale transition-all duration-300 group-hover:grayscale-0">
+                  <Image
+                    src={client.logo}
+                    alt={`${client.name} logo`}
+                    fill
+                    className="object-contain"
+                    sizes="(max-width: 640px) 100px, 120px"
+                    onError={() => handleImageError(client.name)}
+                  />
+                </div>
+              )}
             </div>
             <span className="text-center font-sans text-sm font-medium text-cream/60 transition-colors duration-300 group-hover:text-cream">
               {client.name}
