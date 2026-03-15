@@ -81,15 +81,11 @@ export default function GallerySection() {
                 onClick={() => setSelectedImage(img.src)}
               >
                 <div className="relative aspect-[4/3] overflow-hidden">
-                  <Image
-                    src={img.src}
-                    alt={img.alt}
-                    fill
-                    className="object-cover transition-transform duration-700 group-hover:scale-110"
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1536px) 25vw, 25vw"
-                    quality={75}
-                    loading="lazy"
-                  />
+                  <img
+  src={img.src}
+  alt={img.alt}
+  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+/>
                   <div className="absolute inset-0 bg-black/0 transition-all duration-300 group-hover:bg-black/30" />
                   <div className="absolute inset-0 flex items-end p-4 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                     <p className="font-mono text-xs text-cream">{img.alt}</p>
