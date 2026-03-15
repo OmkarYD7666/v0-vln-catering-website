@@ -19,6 +19,7 @@ const clients = [
   { name: "Four Points", logo: "/logos/fourpoints.png" },
   { name: "Hyatt", logo: "/logos/hyatt.png" },
   { name: "Hyatt Regency", logo: "/logos/hyatt-regency.png" },
+  { name: "Pitney Bowes", logo: "/logos/pitneybowes.png" },
 ]
 
 const testimonials = [
@@ -138,38 +139,38 @@ function LogoCarousel() {
       
       {/* Scrolling container */}
       <div 
-        className={`flex gap-8 ${isPaused ? '[animation-play-state:paused]' : ''}`}
+        className={`flex gap-6 ${isPaused ? '[animation-play-state:paused]' : ''}`}
         style={{
-          animation: 'scroll 25s linear infinite',
+          animation: 'scroll 30s linear infinite',
         }}
       >
         {duplicatedClients.map((client, index) => (
           <div
             key={`${client.name}-${index}`}
-            className="group flex min-w-[150px] flex-col items-center justify-center rounded-lg border border-border/20 bg-card/50 p-6 transition-all duration-300 hover:border-[#C9A227]/30 hover:bg-card sm:min-w-[180px] md:min-w-[200px]"
+            className="group flex min-w-[130px] flex-col items-center justify-center rounded-lg border border-border/20 bg-card/50 p-4 transition-all duration-300 hover:border-[#C9A227]/30 hover:bg-card sm:min-w-[150px] md:min-w-[170px]"
           >
             {/* Logo image with fallback */}
-            <div className="mb-3 flex h-16 w-full items-center justify-center">
+            <div className="mb-2 flex h-12 w-full items-center justify-center sm:h-14">
               {imageErrors[client.name] ? (
-                <div className="flex h-14 w-28 items-center justify-center rounded border border-[#C9A227]/20 bg-[#C9A227]/5 transition-all duration-300 group-hover:border-[#C9A227]/40 group-hover:bg-[#C9A227]/10">
-                  <span className="font-sans text-lg font-bold text-cream/50 transition-colors duration-300 group-hover:text-[#C9A227]">
+                <div className="flex h-10 w-24 items-center justify-center rounded border border-[#C9A227]/20 bg-[#C9A227]/5 transition-all duration-300 group-hover:border-[#C9A227]/40 group-hover:bg-[#C9A227]/10 sm:h-12 sm:w-28">
+                  <span className="font-sans text-base font-bold text-cream/50 transition-colors duration-300 group-hover:text-[#C9A227] sm:text-lg">
                     {client.name.split(' ').map(w => w[0]).join('').slice(0, 3)}
                   </span>
                 </div>
               ) : (
-                <div className="relative h-14 w-28 grayscale transition-all duration-300 group-hover:grayscale-0">
+                <div className="relative h-10 w-24 grayscale transition-all duration-300 group-hover:grayscale-0 sm:h-12 sm:w-28">
                   <Image
                     src={client.logo}
                     alt={`${client.name} logo`}
                     fill
                     className="object-contain"
-                    sizes="(max-width: 640px) 100px, 120px"
+                    sizes="(max-width: 640px) 96px, 112px"
                     onError={() => handleImageError(client.name)}
                   />
                 </div>
               )}
             </div>
-            <span className="text-center font-sans text-sm font-medium text-cream/60 transition-colors duration-300 group-hover:text-cream">
+            <span className="text-center font-sans text-xs font-medium text-cream/60 transition-colors duration-300 group-hover:text-cream sm:text-sm">
               {client.name}
             </span>
           </div>
