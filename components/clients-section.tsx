@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState, useCallback } from "react"
 import { Star, ChevronLeft, ChevronRight } from "lucide-react"
+import Image from "next/image"
 import {
   Carousel,
   CarouselContent,
@@ -9,20 +10,15 @@ import {
   type CarouselApi,
 } from "@/components/ui/carousel"
 
-// Client logos data
+// Client logos data with actual logo images
 const clients = [
-  { name: "Hyatt Pune", category: "Hotel" },
-  { name: "Four Points by Sheraton", category: "Hotel" },
-  { name: "JW Marriott", category: "Hotel" },
-  { name: "The Westin", category: "Hotel" },
-  { name: "Novotel", category: "Hotel" },
-  { name: "Conrad Pune", category: "Hotel" },
-  { name: "Amdocs", category: "Corporate" },
-  { name: "Infosys", category: "Corporate" },
-  { name: "Wipro", category: "Corporate" },
-  { name: "Tech Mahindra", category: "Corporate" },
-  { name: "Michelin", category: "Corporate" },
-  { name: "SLB", category: "Corporate" },
+  { name: "SLB", logo: "/logos/slb.png" },
+  { name: "ABIL", logo: "/logos/abil.png" },
+  { name: "Michelin", logo: "/logos/michelin.png" },
+  { name: "Amdocs", logo: "/logos/amdocs.png" },
+  { name: "Four Points", logo: "/logos/fourpoints.png" },
+  { name: "Hyatt", logo: "/logos/hyatt.png" },
+  { name: "Hyatt Regency", logo: "/logos/hyatt-regency.png" },
 ]
 
 const testimonials = [
@@ -118,28 +114,65 @@ const testimonials = [
   },
 ]
 
-function ClientLogo({ client, index, isVisible }: { client: typeof clients[0]; index: number; isVisible: boolean }) {
+// Infinite scrolling logo carousel component
+function LogoCarousel() {
+  const [isPaused, setIsPaused] = useState(false)
+  
+  // Duplicate clients array for seamless infinite scroll
+  const duplicatedClients = [...clients, ...clients]
+
   return (
-    <div
-      className={`group flex flex-col items-center justify-center rounded-lg border border-border/20 bg-card/50 p-6 transition-all duration-500 hover:border-[#C9A227]/30 hover:bg-card ${
-        isVisible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
-      }`}
-      style={{ transitionDelay: `${index * 50}ms` }}
+    <div 
+      className="relative overflow-hidden"
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
     >
-      {/* Logo placeholder with initials */}
-      <div className="mb-3 flex h-16 w-full items-center justify-center grayscale transition-all duration-300 group-hover:grayscale-0">
-        <div className="flex h-14 w-14 items-center justify-center rounded-full border border-[#C9A227]/20 bg-[#C9A227]/5 transition-all duration-300 group-hover:border-[#C9A227]/40 group-hover:bg-[#C9A227]/10">
-          <span className="font-sans text-lg font-bold text-cream/50 transition-colors duration-300 group-hover:text-[#C9A227]">
-            {client.name.split(' ').map(w => w[0]).join('').slice(0, 2)}
-          </span>
-        </div>
+      {/* Gradient fade on edges */}
+      <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-16 bg-gradient-to-r from-background to-transparent" />
+      <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-16 bg-gradient-to-l from-background to-transparent" />
+      
+      {/* Scrolling container */}
+      <div 
+        className={`flex gap-8 ${isPaused ? '[animation-play-state:paused]' : ''}`}
+        style={{
+          animation: 'scroll 25s linear infinite',
+        }}
+      >
+        {duplicatedClients.map((client, index) => (
+          <div
+            key={`${client.name}-${index}`}
+            className="group flex min-w-[150px] flex-col items-center justify-center rounded-lg border border-border/20 bg-card/50 p-6 transition-all duration-300 hover:border-[#C9A227]/30 hover:bg-card sm:min-w-[180px] md:min-w-[200px]"
+          >
+            {/* Logo image */}
+            <div className="mb-3 flex h-16 w-full items-center justify-center">
+              <div className="relative h-14 w-28 grayscale transition-all duration-300 group-hover:grayscale-0">
+                <Image
+                  src={client.logo}
+                  alt={`${client.name} logo`}
+                  fill
+                  className="object-contain"
+                  sizes="(max-width: 640px) 100px, 120px"
+                />
+              </div>
+            </div>
+            <span className="text-center font-sans text-sm font-medium text-cream/60 transition-colors duration-300 group-hover:text-cream">
+              {client.name}
+            </span>
+          </div>
+        ))}
       </div>
-      <span className="text-center font-sans text-sm font-medium text-cream/60 transition-colors duration-300 group-hover:text-cream">
-        {client.name}
-      </span>
-      <span className="mt-1 font-mono text-[10px] uppercase tracking-wider text-[#C9A227]/40 transition-colors duration-300 group-hover:text-[#C9A227]/70">
-        {client.category}
-      </span>
+
+      {/* CSS animation keyframes */}
+      <style jsx>{`
+        @keyframes scroll {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
+        }
+      `}</style>
     </div>
   )
 }
@@ -286,17 +319,8 @@ export default function ClientsSection() {
             </p>
           </div>
 
-          {/* Client Logos Grid */}
-          <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
-            {clients.map((client, index) => (
-              <ClientLogo
-                key={client.name}
-                client={client}
-                index={index}
-                isVisible={isVisible}
-              />
-            ))}
-          </div>
+          {/* Client Logos Carousel */}
+          <LogoCarousel />
         </div>
 
         {/* Divider */}
