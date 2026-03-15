@@ -4,6 +4,7 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
+<<<<<<< HEAD
   /* VLN Catering Theme - Black, Gold, Red, Cream */
   --background: oklch(0.10 0.005 60);
   --foreground: oklch(0.92 0.02 85);
@@ -39,6 +40,43 @@
   --cream: oklch(0.95 0.02 85);
   --dark-bg: oklch(0.10 0.005 60);
   --darker-bg: oklch(0.07 0.003 60);
+=======
+  /* VLN Catering Theme - Dark Chocolate Brown Luxury */
+  --background: #140C09;
+  --foreground: #FFFFFF;
+  --card: #1C120E;
+  --card-foreground: #FFFFFF;
+  --popover: #1C120E;
+  --popover-foreground: #FFFFFF;
+  --primary: #C9A227;
+  --primary-foreground: #140C09;
+  --secondary: #241712;
+  --secondary-foreground: #C9A227;
+  --muted: #241712;
+  --muted-foreground: #9A8A7C;
+  --accent: #C9A227;
+  --accent-foreground: #140C09;
+  --destructive: #8B3A3A;
+  --destructive-foreground: #FFFFFF;
+  --border: #3D2A22;
+  --input: #2A1C16;
+  --ring: #C9A227;
+  --chart-1: #C9A227;
+  --chart-2: #8B3A3A;
+  --chart-3: #9A8A7C;
+  --chart-4: #B89B5E;
+  --chart-5: #5D4037;
+  --radius: 0.5rem;
+
+  /* Custom VLN tokens - Dark Chocolate Brown Luxury */
+  --gold: #C9A227;
+  --gold-light: #D4B84A;
+  --gold-dark: #A68520;
+  --crimson: #8B3A3A;
+  --cream: #FFFFFF;
+  --dark-bg: #1C120E;
+  --darker-bg: #140C09;
+>>>>>>> 8ef57c8a44f69a1d0a78d080cbd315fb8116e1fa
 }
 
 @theme inline {
@@ -91,11 +129,16 @@
   }
 }
 
+<<<<<<< HEAD
 /* Custom scrollbar */
+=======
+/* Custom scrollbar - Dark chocolate brown theme */
+>>>>>>> 8ef57c8a44f69a1d0a78d080cbd315fb8116e1fa
 ::-webkit-scrollbar {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
+<<<<<<< HEAD
   background: var(--darker-bg);
 }
 ::-webkit-scrollbar-thumb {
@@ -104,6 +147,16 @@
 }
 ::-webkit-scrollbar-thumb:hover {
   background: var(--gold);
+=======
+  background: #140C09;
+}
+::-webkit-scrollbar-thumb {
+  background: #3D2A22;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #C9A227;
+>>>>>>> 8ef57c8a44f69a1d0a78d080cbd315fb8116e1fa
 }
 
 /* Smooth scroll */
@@ -111,9 +164,15 @@ html {
   scroll-behavior: smooth;
 }
 
+<<<<<<< HEAD
 /* Gold gradient text utility */
 .text-gold-gradient {
   background: linear-gradient(135deg, var(--gold-light), var(--gold), var(--gold-dark));
+=======
+/* Gold gradient text utility - Premium gold accent */
+.text-gold-gradient {
+  background: linear-gradient(135deg, #D4B84A, #C9A227, #A68520);
+>>>>>>> 8ef57c8a44f69a1d0a78d080cbd315fb8116e1fa
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -126,7 +185,11 @@ html {
 }
 
 .gold-shimmer {
+<<<<<<< HEAD
   background: linear-gradient(90deg, var(--gold-dark), var(--gold-light), var(--gold), var(--gold-light), var(--gold-dark));
+=======
+  background: linear-gradient(90deg, #A68520, #D4B84A, #C9A227, #D4B84A, #A68520);
+>>>>>>> 8ef57c8a44f69a1d0a78d080cbd315fb8116e1fa
   background-size: 200% 100%;
   animation: shimmer 3s ease-in-out infinite;
 }
@@ -156,9 +219,15 @@ html {
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
 
+<<<<<<< HEAD
 /* Gold border glow */
 .gold-glow {
   box-shadow: 0 0 20px rgba(184, 156, 90, 0.15);
+=======
+/* Gold border glow - Premium accent */
+.gold-glow {
+  box-shadow: 0 0 20px rgba(201, 162, 39, 0.15);
+>>>>>>> 8ef57c8a44f69a1d0a78d080cbd315fb8116e1fa
 }
 
 /* Parallax image */
@@ -169,9 +238,15 @@ html {
   background-size: cover;
 }
 
+<<<<<<< HEAD
 /* Video overlay */
 .video-overlay {
   background: linear-gradient(to bottom, rgba(10,8,5,0.7) 0%, rgba(10,8,5,0.4) 40%, rgba(10,8,5,0.7) 100%);
+=======
+/* Video overlay - Dark chocolate brown for hero readability */
+.video-overlay {
+  background: linear-gradient(to bottom, rgba(20,12,9,0.85) 0%, rgba(20,12,9,0.5) 40%, rgba(20,12,9,0.85) 100%);
+>>>>>>> 8ef57c8a44f69a1d0a78d080cbd315fb8116e1fa
 }
 
 /* Client marquee scroll */
@@ -194,3 +269,20 @@ html {
 .animate-float {
   animation: float 3s ease-in-out infinite;
 }
+<<<<<<< HEAD
+=======
+
+/* Cinematic zoom animation for video */
+@keyframes cinematic-zoom {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.05);
+  }
+}
+.video-zoom {
+  animation: cinematic-zoom 12s ease-in-out infinite;
+  transform-origin: center;
+}
+>>>>>>> 8ef57c8a44f69a1d0a78d080cbd315fb8116e1fa

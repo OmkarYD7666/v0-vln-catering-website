@@ -114,7 +114,11 @@ export default function AboutSection() {
             }`}
           >
             <h3 className="mb-6 font-sans text-2xl font-semibold text-cream md:text-3xl">
+<<<<<<< HEAD
               Crafting Unforgettable <span className="text-gold">Culinary Experiences</span> Since 1999
+=======
+              Crafting Unforgettable <span className="text-gold">Culinary Experiences</span> Since 2001
+>>>>>>> 8ef57c8a44f69a1d0a78d080cbd315fb8116e1fa
             </h3>
             <p className="mb-6 font-mono text-sm leading-relaxed text-muted-foreground">
               VLN Catering and Event Management has been the preferred catering partner for
