@@ -80,7 +80,7 @@ export default function GallerySection() {
                 style={{ transitionDelay: `${index * 80}ms` }}
                 onClick={() => setSelectedImage(img.src)}
               >
-                <div className="relative aspect-square overflow-hidden">
+                <div className="relative aspect-[4/3] overflow-hidden">
                   <Image
                     src={img.src}
                     alt={img.alt}
