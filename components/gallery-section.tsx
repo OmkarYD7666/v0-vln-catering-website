@@ -149,7 +149,7 @@ export default function GallerySection() {
                     fill
                     className="object-cover transition-transform duration-700 group-hover:scale-110"
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1536px) 25vw, 25vw"
-                    quality={85}
+                    quality={75}
                     loading="lazy"
                   />
                   <div className="absolute inset-0 bg-black/0 transition-all duration-300 group-hover:bg-black/30" />
