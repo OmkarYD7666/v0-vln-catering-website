@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react"
 import Image from "next/image"
 
-const galleryImages = const galleryImages = [
+const galleryImages = [
   { src: "/images/gallery/image1.jpg", alt: "Catering event setup", span: "md:col-span-2 md:row-span-2" },
   { src: "/images/gallery/image2.jpg", alt: "Indian catering buffet", span: "md:col-span-2" },
   { src: "/images/gallery/image3.jpg", alt: "Premium catering dish", span: "" },
