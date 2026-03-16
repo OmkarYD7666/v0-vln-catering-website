@@ -142,17 +142,17 @@ function LogoCarousel() {
         {duplicatedClients.map((client, index) => (
           <div
             key={`${client.name}-${index}`}
-            className="group flex min-w-[140px] flex-col items-center justify-center rounded-lg border border-border/20 bg-card/50 p-4 transition-all duration-300 hover:border-[#C9A227]/30 hover:bg-card sm:min-w-[160px] md:min-w-[180px]"
+            className="group flex min-w-[160px] flex-col items-center justify-center rounded-lg border border-border/20 bg-card/50 p-5 transition-all duration-300 hover:border-[#C9A227]/30 hover:bg-card sm:min-w-[180px] md:min-w-[200px]"
           >
             {/* Logo image */}
-            <div className="mb-3 flex h-[55px] w-full items-center justify-center sm:h-[60px]">
-              <div className="relative h-[55px] w-[120px] grayscale transition-all duration-300 group-hover:grayscale-0 sm:h-[60px] sm:w-[130px]">
+            <div className="mb-3 flex h-[70px] w-full items-center justify-center sm:h-[80px]">
+              <div className="relative h-[70px] w-[140px] grayscale transition-all duration-300 group-hover:grayscale-0 sm:h-[80px] sm:w-[160px]">
                 <Image
                   src={client.logo}
                   alt={`${client.name} logo`}
                   fill
                   className="object-contain"
-                  sizes="130px"
+                  sizes="160px"
                   unoptimized
                 />
               </div>
