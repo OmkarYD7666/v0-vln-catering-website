@@ -20,12 +20,14 @@ const galleryImages = [
   { src: "/images/gallery/image14.jpg", alt: "Luxury food presentation", span: "" }
 ]
 
-// Different animation variants for variety
+// Different animation variants for variety - 6 variants for more organic movement
 const floatVariants = [
   "animate-float-1",
   "animate-float-2",
   "animate-float-3",
   "animate-float-4",
+  "animate-float-5",
+  "animate-float-6",
 ]
 
 export default function GallerySection() {
@@ -48,18 +50,42 @@ export default function GallerySection() {
     <>
       {/* CSS Keyframe Animations */}
       <style jsx global>{`
+        /* Entire grid drift animation */
+        @keyframes grid-drift {
+          0%, 100% {
+            transform: translate(0px, 0px);
+          }
+          25% {
+            transform: translate(6px, -4px);
+          }
+          50% {
+            transform: translate(-4px, 6px);
+          }
+          75% {
+            transform: translate(4px, 4px);
+          }
+        }
+        
+        .gallery-grid-drift {
+          animation: grid-drift 20s ease-in-out infinite;
+        }
+        
+        /* Individual image floating with more pronounced movement */
         @keyframes float-1 {
           0%, 100% {
             transform: translate(0px, 0px) rotate(0deg);
           }
-          25% {
-            transform: translate(3px, -4px) rotate(0.5deg);
+          20% {
+            transform: translate(8px, -6px) rotate(1deg);
           }
-          50% {
-            transform: translate(-2px, 3px) rotate(-0.5deg);
+          40% {
+            transform: translate(-4px, 8px) rotate(-0.8deg);
           }
-          75% {
-            transform: translate(4px, 2px) rotate(0.3deg);
+          60% {
+            transform: translate(-8px, -4px) rotate(0.6deg);
+          }
+          80% {
+            transform: translate(6px, 6px) rotate(-1deg);
           }
         }
         
@@ -67,14 +93,17 @@ export default function GallerySection() {
           0%, 100% {
             transform: translate(0px, 0px) rotate(0deg);
           }
-          25% {
-            transform: translate(-4px, 3px) rotate(-0.6deg);
+          20% {
+            transform: translate(-6px, 8px) rotate(-1.2deg);
           }
-          50% {
-            transform: translate(3px, -3px) rotate(0.4deg);
+          40% {
+            transform: translate(8px, -4px) rotate(0.8deg);
           }
-          75% {
-            transform: translate(-2px, -4px) rotate(-0.3deg);
+          60% {
+            transform: translate(4px, 6px) rotate(-0.6deg);
+          }
+          80% {
+            transform: translate(-8px, -6px) rotate(1deg);
           }
         }
         
@@ -82,14 +111,17 @@ export default function GallerySection() {
           0%, 100% {
             transform: translate(0px, 0px) rotate(0deg);
           }
-          25% {
-            transform: translate(2px, 4px) rotate(0.4deg);
+          20% {
+            transform: translate(6px, 6px) rotate(0.8deg);
           }
-          50% {
-            transform: translate(-3px, -2px) rotate(-0.6deg);
+          40% {
+            transform: translate(-8px, -8px) rotate(-1deg);
           }
-          75% {
-            transform: translate(-4px, 3px) rotate(0.5deg);
+          60% {
+            transform: translate(-4px, 8px) rotate(1.2deg);
+          }
+          80% {
+            transform: translate(8px, -4px) rotate(-0.8deg);
           }
         }
         
@@ -97,40 +129,91 @@ export default function GallerySection() {
           0%, 100% {
             transform: translate(0px, 0px) rotate(0deg);
           }
+          20% {
+            transform: translate(-8px, -4px) rotate(-0.6deg);
+          }
+          40% {
+            transform: translate(6px, 8px) rotate(1deg);
+          }
+          60% {
+            transform: translate(8px, -6px) rotate(-1.2deg);
+          }
+          80% {
+            transform: translate(-6px, 4px) rotate(0.8deg);
+          }
+        }
+        
+        @keyframes float-5 {
+          0%, 100% {
+            transform: translate(0px, 0px) rotate(0deg);
+          }
           25% {
-            transform: translate(-3px, -3px) rotate(-0.4deg);
+            transform: translate(10px, 4px) rotate(1.5deg);
           }
           50% {
-            transform: translate(4px, 2px) rotate(0.6deg);
+            transform: translate(-6px, -8px) rotate(-1deg);
           }
           75% {
-            transform: translate(2px, -4px) rotate(-0.5deg);
+            transform: translate(-10px, 6px) rotate(0.8deg);
+          }
+        }
+        
+        @keyframes float-6 {
+          0%, 100% {
+            transform: translate(0px, 0px) rotate(0deg);
+          }
+          25% {
+            transform: translate(-10px, -6px) rotate(-1.5deg);
+          }
+          50% {
+            transform: translate(8px, 8px) rotate(1deg);
+          }
+          75% {
+            transform: translate(6px, -10px) rotate(-0.8deg);
           }
         }
         
         .animate-float-1 {
-          animation: float-1 8s ease-in-out infinite;
+          animation: float-1 12s ease-in-out infinite;
         }
         
         .animate-float-2 {
-          animation: float-2 10s ease-in-out infinite;
+          animation: float-2 14s ease-in-out infinite;
         }
         
         .animate-float-3 {
-          animation: float-3 9s ease-in-out infinite;
+          animation: float-3 11s ease-in-out infinite;
         }
         
         .animate-float-4 {
-          animation: float-4 11s ease-in-out infinite;
+          animation: float-4 13s ease-in-out infinite;
+        }
+        
+        .animate-float-5 {
+          animation: float-5 15s ease-in-out infinite;
+        }
+        
+        .animate-float-6 {
+          animation: float-6 10s ease-in-out infinite;
         }
         
         .gallery-image-wrapper:hover .gallery-float-image {
           animation-play-state: paused;
-          transform: scale(1.08) rotate(0deg) !important;
+          transform: scale(1.1) rotate(0deg) !important;
+        }
+        
+        .gallery-image-wrapper:hover {
+          z-index: 10;
         }
         
         .gallery-float-image {
-          transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+          transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+          will-change: transform;
+        }
+        
+        /* Pause grid drift on hover for stability */
+        .gallery-grid-drift:has(.gallery-image-wrapper:hover) {
+          animation-play-state: paused;
         }
       `}</style>
 
@@ -164,8 +247,8 @@ export default function GallerySection() {
             </p>
           </div>
 
-          {/* Masonry Grid */}
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-4">
+          {/* Masonry Grid with drift animation */}
+          <div className={`grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-4 ${isVisible ? "gallery-grid-drift" : ""}`}>
             {galleryImages.map((img, index) => (
               <div
                 key={img.src}
