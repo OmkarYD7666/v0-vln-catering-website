@@ -7,6 +7,9 @@ import {
   MapPin,
   Clock,
   MessageCircle,
+  Youtube,
+  Instagram,
+  Facebook,
 } from "lucide-react"
 
 const contactMethods = [
@@ -139,6 +142,42 @@ export default function ContactSection() {
                     10:00 AM - 6:00 PM
                   </p>
                 </div>
+              </div>
+            </div>
+
+            {/* Social Media Buttons */}
+            <div className="mt-6 rounded-sm border border-border/30 bg-card p-6">
+              <h3 className="mb-4 font-sans text-base font-semibold text-cream">
+                Follow Us
+              </h3>
+              <div className="flex flex-wrap gap-3">
+                <a
+                  href="https://youtube.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex items-center gap-2 rounded-sm border border-gold/20 bg-gold/5 px-4 py-3 font-mono text-sm text-cream transition-all duration-300 hover:border-[#FF0000]/50 hover:bg-[#FF0000]/10 hover:text-[#FF0000]"
+                >
+                  <Youtube className="h-5 w-5 text-gold transition-colors duration-300 group-hover:text-[#FF0000]" />
+                  YouTube
+                </a>
+                <a
+                  href="https://instagram.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex items-center gap-2 rounded-sm border border-gold/20 bg-gold/5 px-4 py-3 font-mono text-sm text-cream transition-all duration-300 hover:border-[#E4405F]/50 hover:bg-[#E4405F]/10 hover:text-[#E4405F]"
+                >
+                  <Instagram className="h-5 w-5 text-gold transition-colors duration-300 group-hover:text-[#E4405F]" />
+                  Instagram
+                </a>
+                <a
+                  href="https://facebook.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex items-center gap-2 rounded-sm border border-gold/20 bg-gold/5 px-4 py-3 font-mono text-sm text-cream transition-all duration-300 hover:border-[#1877F2]/50 hover:bg-[#1877F2]/10 hover:text-[#1877F2]"
+                >
+                  <Facebook className="h-5 w-5 text-gold transition-colors duration-300 group-hover:text-[#1877F2]" />
+                  Facebook
+                </a>
               </div>
             </div>
           </div>
