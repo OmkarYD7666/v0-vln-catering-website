@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useRef, useState } from "react"
+import { useEffect, useRef, useState, useCallback } from "react"
 import Image from "next/image"
 
 const galleryImages = [
@@ -20,20 +20,19 @@ const galleryImages = [
   { src: "/images/gallery/image14.jpg", alt: "Luxury food presentation", span: "" }
 ]
 
-// Different animation variants for variety - 6 variants for more organic movement
-const floatVariants = [
-  "animate-float-1",
-  "animate-float-2",
-  "animate-float-3",
-  "animate-float-4",
-  "animate-float-5",
-  "animate-float-6",
-]
-
 export default function GallerySection() {
   const [isVisible, setIsVisible] = useState(false)
   const sectionRef = useRef<HTMLDivElement>(null)
   const [selectedImage, setSelectedImage] = useState<string | null>(null)
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
+  
+  // Track which image is displayed at each grid position
+  const [imagePositions, setImagePositions] = useState<number[]>(() => 
+    galleryImages.map((_, i) => i)
+  )
+  
+  // Track which images are currently swapping for animation
+  const [swappingPair, setSwappingPair] = useState<[number, number] | null>(null)
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -46,174 +45,137 @@ export default function GallerySection() {
     return () => observer.disconnect()
   }, [])
 
+  // Swap animation logic
+  const performSwap = useCallback(() => {
+    if (hoveredIndex !== null) return // Don't swap while hovering
+    
+    // Pick two random different positions to swap
+    const pos1 = Math.floor(Math.random() * galleryImages.length)
+    let pos2 = Math.floor(Math.random() * galleryImages.length)
+    while (pos2 === pos1) {
+      pos2 = Math.floor(Math.random() * galleryImages.length)
+    }
+    
+    // Start the swap animation
+    setSwappingPair([pos1, pos2])
+    
+    // After animation completes, update positions
+    setTimeout(() => {
+      setImagePositions(prev => {
+        const newPositions = [...prev]
+        const temp = newPositions[pos1]
+        newPositions[pos1] = newPositions[pos2]
+        newPositions[pos2] = temp
+        return newPositions
+      })
+      setSwappingPair(null)
+    }, 1200) // Match animation duration
+  }, [hoveredIndex])
+
+  // Set up interval for continuous swapping
+  useEffect(() => {
+    if (!isVisible) return
+    
+    const interval = setInterval(performSwap, 3500) // Swap every 3.5 seconds
+    return () => clearInterval(interval)
+  }, [isVisible, performSwap])
+
   return (
     <>
       {/* CSS Keyframe Animations */}
       <style jsx global>{`
-        /* Entire grid drift animation */
-        @keyframes grid-drift {
-          0%, 100% {
-            transform: translate(0px, 0px);
-          }
-          25% {
-            transform: translate(6px, -4px);
-          }
-          50% {
-            transform: translate(-4px, 6px);
-          }
-          75% {
-            transform: translate(4px, 4px);
-          }
+        .gallery-swap-container {
+          perspective: 1000px;
         }
         
-        .gallery-grid-drift {
-          animation: grid-drift 20s ease-in-out infinite;
-        }
-        
-        /* Individual image floating with more pronounced movement */
-        @keyframes float-1 {
-          0%, 100% {
-            transform: translate(0px, 0px) rotate(0deg);
-          }
-          20% {
-            transform: translate(8px, -6px) rotate(1deg);
-          }
-          40% {
-            transform: translate(-4px, 8px) rotate(-0.8deg);
-          }
-          60% {
-            transform: translate(-8px, -4px) rotate(0.6deg);
-          }
-          80% {
-            transform: translate(6px, 6px) rotate(-1deg);
-          }
-        }
-        
-        @keyframes float-2 {
-          0%, 100% {
-            transform: translate(0px, 0px) rotate(0deg);
-          }
-          20% {
-            transform: translate(-6px, 8px) rotate(-1.2deg);
-          }
-          40% {
-            transform: translate(8px, -4px) rotate(0.8deg);
-          }
-          60% {
-            transform: translate(4px, 6px) rotate(-0.6deg);
-          }
-          80% {
-            transform: translate(-8px, -6px) rotate(1deg);
-          }
-        }
-        
-        @keyframes float-3 {
-          0%, 100% {
-            transform: translate(0px, 0px) rotate(0deg);
-          }
-          20% {
-            transform: translate(6px, 6px) rotate(0.8deg);
-          }
-          40% {
-            transform: translate(-8px, -8px) rotate(-1deg);
-          }
-          60% {
-            transform: translate(-4px, 8px) rotate(1.2deg);
-          }
-          80% {
-            transform: translate(8px, -4px) rotate(-0.8deg);
-          }
-        }
-        
-        @keyframes float-4 {
-          0%, 100% {
-            transform: translate(0px, 0px) rotate(0deg);
-          }
-          20% {
-            transform: translate(-8px, -4px) rotate(-0.6deg);
-          }
-          40% {
-            transform: translate(6px, 8px) rotate(1deg);
-          }
-          60% {
-            transform: translate(8px, -6px) rotate(-1.2deg);
-          }
-          80% {
-            transform: translate(-6px, 4px) rotate(0.8deg);
-          }
-        }
-        
-        @keyframes float-5 {
-          0%, 100% {
-            transform: translate(0px, 0px) rotate(0deg);
-          }
-          25% {
-            transform: translate(10px, 4px) rotate(1.5deg);
-          }
-          50% {
-            transform: translate(-6px, -8px) rotate(-1deg);
-          }
-          75% {
-            transform: translate(-10px, 6px) rotate(0.8deg);
-          }
-        }
-        
-        @keyframes float-6 {
-          0%, 100% {
-            transform: translate(0px, 0px) rotate(0deg);
-          }
-          25% {
-            transform: translate(-10px, -6px) rotate(-1.5deg);
-          }
-          50% {
-            transform: translate(8px, 8px) rotate(1deg);
-          }
-          75% {
-            transform: translate(6px, -10px) rotate(-0.8deg);
-          }
-        }
-        
-        .animate-float-1 {
-          animation: float-1 12s ease-in-out infinite;
-        }
-        
-        .animate-float-2 {
-          animation: float-2 14s ease-in-out infinite;
-        }
-        
-        .animate-float-3 {
-          animation: float-3 11s ease-in-out infinite;
-        }
-        
-        .animate-float-4 {
-          animation: float-4 13s ease-in-out infinite;
-        }
-        
-        .animate-float-5 {
-          animation: float-5 15s ease-in-out infinite;
-        }
-        
-        .animate-float-6 {
-          animation: float-6 10s ease-in-out infinite;
-        }
-        
-        .gallery-image-wrapper:hover .gallery-float-image {
-          animation-play-state: paused;
-          transform: scale(1.1) rotate(0deg) !important;
-        }
-        
-        .gallery-image-wrapper:hover {
-          z-index: 10;
-        }
-        
-        .gallery-float-image {
-          transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        .gallery-image-card {
+          transform-style: preserve-3d;
+          transition: transform 1.2s cubic-bezier(0.4, 0, 0.2, 1);
           will-change: transform;
         }
         
-        /* Pause grid drift on hover for stability */
-        .gallery-grid-drift:has(.gallery-image-wrapper:hover) {
-          animation-play-state: paused;
+        .gallery-image-card.swapping-out {
+          animation: flipOut 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+        
+        .gallery-image-card.swapping-in {
+          animation: flipIn 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+        
+        @keyframes flipOut {
+          0% {
+            transform: rotateY(0deg) scale(1);
+            opacity: 1;
+          }
+          50% {
+            transform: rotateY(90deg) scale(0.95);
+            opacity: 0.7;
+          }
+          100% {
+            transform: rotateY(180deg) scale(1);
+            opacity: 1;
+          }
+        }
+        
+        @keyframes flipIn {
+          0% {
+            transform: rotateY(-180deg) scale(1);
+            opacity: 1;
+          }
+          50% {
+            transform: rotateY(-90deg) scale(0.95);
+            opacity: 0.7;
+          }
+          100% {
+            transform: rotateY(0deg) scale(1);
+            opacity: 1;
+          }
+        }
+        
+        /* Subtle floating animation when not swapping */
+        @keyframes gentleFloat {
+          0%, 100% {
+            transform: translateY(0px) rotateY(0deg);
+          }
+          50% {
+            transform: translateY(-4px) rotateY(2deg);
+          }
+        }
+        
+        .gallery-image-card.floating {
+          animation: gentleFloat 6s ease-in-out infinite;
+        }
+        
+        .gallery-image-card.floating:nth-child(odd) {
+          animation-delay: -3s;
+        }
+        
+        .gallery-image-card.floating:nth-child(3n) {
+          animation-duration: 7s;
+        }
+        
+        .gallery-image-card.floating:nth-child(4n) {
+          animation-duration: 5s;
+          animation-delay: -1.5s;
+        }
+        
+        /* Hover state */
+        .gallery-image-wrapper:hover .gallery-image-card {
+          animation-play-state: paused !important;
+          transform: scale(1.05) rotateY(0deg) !important;
+        }
+        
+        .gallery-image-wrapper:hover {
+          z-index: 20;
+        }
+        
+        /* Smooth image transition */
+        .gallery-image-inner {
+          transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        
+        .gallery-image-wrapper:hover .gallery-image-inner {
+          transform: scale(1.08);
         }
       `}</style>
 
@@ -247,42 +209,55 @@ export default function GallerySection() {
             </p>
           </div>
 
-          {/* Masonry Grid with drift animation */}
-          <div className={`grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-4 ${isVisible ? "gallery-grid-drift" : ""}`}>
-            {galleryImages.map((img, index) => (
-              <div
-                key={img.src}
-                className={`gallery-image-wrapper group relative cursor-pointer overflow-hidden rounded-sm ${img.span} transition-all duration-700 ${
-                  isVisible
-                    ? "translate-y-0 opacity-100"
-                    : "translate-y-8 opacity-0"
-                }`}
-                style={{ transitionDelay: `${index * 80}ms` }}
-                onClick={() => setSelectedImage(img.src)}
-              >
-                <div className="relative aspect-[4/3] overflow-hidden">
-                  <div className="relative aspect-square overflow-hidden">
-                    <Image
-                      src={img.src}
-                      alt={img.alt}
-                      width={600}
-                      height={600}
-                      className={`gallery-float-image w-full h-full object-cover ${
-                        isVisible ? floatVariants[index % floatVariants.length] : ""
+          {/* Masonry Grid with swapping animation */}
+          <div className="gallery-swap-container grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-4">
+            {galleryImages.map((gridSlot, gridIndex) => {
+              const imageIndex = imagePositions[gridIndex]
+              const img = galleryImages[imageIndex]
+              const isSwapping = swappingPair && (swappingPair[0] === gridIndex || swappingPair[1] === gridIndex)
+              const isSwappingOut = swappingPair && swappingPair[0] === gridIndex
+              const isSwappingIn = swappingPair && swappingPair[1] === gridIndex
+              
+              return (
+                <div
+                  key={gridIndex}
+                  className={`gallery-image-wrapper group relative cursor-pointer overflow-hidden rounded-sm ${gridSlot.span} transition-all duration-700 ${
+                    isVisible
+                      ? "translate-y-0 opacity-100"
+                      : "translate-y-8 opacity-0"
+                  }`}
+                  style={{ transitionDelay: `${gridIndex * 80}ms` }}
+                  onClick={() => setSelectedImage(img.src)}
+                  onMouseEnter={() => setHoveredIndex(gridIndex)}
+                  onMouseLeave={() => setHoveredIndex(null)}
+                >
+                  <div className="relative aspect-[4/3] overflow-hidden">
+                    <div 
+                      className={`gallery-image-card relative aspect-square overflow-hidden ${
+                        isSwappingOut ? 'swapping-out' : 
+                        isSwappingIn ? 'swapping-in' : 
+                        (isVisible && !isSwapping ? 'floating' : '')
                       }`}
-                      style={{ animationDelay: `${index * 0.3}s` }}
-                    />
+                    >
+                      <Image
+                        src={img.src}
+                        alt={img.alt}
+                        width={600}
+                        height={600}
+                        className="gallery-image-inner w-full h-full object-cover"
+                      />
+                    </div>
+                    <div className="absolute inset-0 bg-black/0 transition-all duration-300 group-hover:bg-black/30" />
+                    <div className="absolute inset-0 flex items-end p-4 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                      <p className="font-mono text-xs text-cream">{img.alt}</p>
+                    </div>
+                    {/* Gold corner accent */}
+                    <div className="absolute left-0 top-0 h-0 w-0 border-l-2 border-t-2 border-gold/0 transition-all duration-500 group-hover:h-8 group-hover:w-8 group-hover:border-gold/60" />
+                    <div className="absolute bottom-0 right-0 h-0 w-0 border-b-2 border-r-2 border-gold/0 transition-all duration-500 group-hover:h-8 group-hover:w-8 group-hover:border-gold/60" />
                   </div>
-                  <div className="absolute inset-0 bg-black/0 transition-all duration-300 group-hover:bg-black/30" />
-                  <div className="absolute inset-0 flex items-end p-4 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                    <p className="font-mono text-xs text-cream">{img.alt}</p>
-                  </div>
-                  {/* Gold corner accent */}
-                  <div className="absolute left-0 top-0 h-0 w-0 border-l-2 border-t-2 border-gold/0 transition-all duration-500 group-hover:h-8 group-hover:w-8 group-hover:border-gold/60" />
-                  <div className="absolute bottom-0 right-0 h-0 w-0 border-b-2 border-r-2 border-gold/0 transition-all duration-500 group-hover:h-8 group-hover:w-8 group-hover:border-gold/60" />
                 </div>
-              </div>
-            ))}
+              )
+            })}
           </div>
         </div>
       </section>
