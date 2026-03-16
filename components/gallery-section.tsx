@@ -19,6 +19,15 @@ const galleryImages = [
   { src: "/images/gallery/image13.jpg", alt: "Traditional catering setup", span: "" },
   { src: "/images/gallery/image14.jpg", alt: "Luxury food presentation", span: "" }
 ]
+
+// Different animation variants for variety
+const floatVariants = [
+  "animate-float-1",
+  "animate-float-2",
+  "animate-float-3",
+  "animate-float-4",
+]
+
 export default function GallerySection() {
   const [isVisible, setIsVisible] = useState(false)
   const sectionRef = useRef<HTMLDivElement>(null)
@@ -37,6 +46,94 @@ export default function GallerySection() {
 
   return (
     <>
+      {/* CSS Keyframe Animations */}
+      <style jsx global>{`
+        @keyframes float-1 {
+          0%, 100% {
+            transform: translate(0px, 0px) rotate(0deg);
+          }
+          25% {
+            transform: translate(3px, -4px) rotate(0.5deg);
+          }
+          50% {
+            transform: translate(-2px, 3px) rotate(-0.5deg);
+          }
+          75% {
+            transform: translate(4px, 2px) rotate(0.3deg);
+          }
+        }
+        
+        @keyframes float-2 {
+          0%, 100% {
+            transform: translate(0px, 0px) rotate(0deg);
+          }
+          25% {
+            transform: translate(-4px, 3px) rotate(-0.6deg);
+          }
+          50% {
+            transform: translate(3px, -3px) rotate(0.4deg);
+          }
+          75% {
+            transform: translate(-2px, -4px) rotate(-0.3deg);
+          }
+        }
+        
+        @keyframes float-3 {
+          0%, 100% {
+            transform: translate(0px, 0px) rotate(0deg);
+          }
+          25% {
+            transform: translate(2px, 4px) rotate(0.4deg);
+          }
+          50% {
+            transform: translate(-3px, -2px) rotate(-0.6deg);
+          }
+          75% {
+            transform: translate(-4px, 3px) rotate(0.5deg);
+          }
+        }
+        
+        @keyframes float-4 {
+          0%, 100% {
+            transform: translate(0px, 0px) rotate(0deg);
+          }
+          25% {
+            transform: translate(-3px, -3px) rotate(-0.4deg);
+          }
+          50% {
+            transform: translate(4px, 2px) rotate(0.6deg);
+          }
+          75% {
+            transform: translate(2px, -4px) rotate(-0.5deg);
+          }
+        }
+        
+        .animate-float-1 {
+          animation: float-1 8s ease-in-out infinite;
+        }
+        
+        .animate-float-2 {
+          animation: float-2 10s ease-in-out infinite;
+        }
+        
+        .animate-float-3 {
+          animation: float-3 9s ease-in-out infinite;
+        }
+        
+        .animate-float-4 {
+          animation: float-4 11s ease-in-out infinite;
+        }
+        
+        .gallery-image-wrapper:hover .gallery-float-image {
+          animation-play-state: paused;
+          transform: scale(1.08) rotate(0deg) !important;
+        }
+        
+        .gallery-float-image {
+          transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+      `}</style>
+
       <section
         id="gallery"
         ref={sectionRef}
@@ -72,7 +169,7 @@ export default function GallerySection() {
             {galleryImages.map((img, index) => (
               <div
                 key={img.src}
-                className={`group relative cursor-pointer overflow-hidden rounded-sm ${img.span} transition-all duration-700 ${
+                className={`gallery-image-wrapper group relative cursor-pointer overflow-hidden rounded-sm ${img.span} transition-all duration-700 ${
                   isVisible
                     ? "translate-y-0 opacity-100"
                     : "translate-y-8 opacity-0"
@@ -81,15 +178,18 @@ export default function GallerySection() {
                 onClick={() => setSelectedImage(img.src)}
               >
                 <div className="relative aspect-[4/3] overflow-hidden">
- <div className="relative aspect-square overflow-hidden">
-  <Image
-    src={img.src}
-    alt={img.alt}
-    width={600}
-    height={600}
-    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-  />
-</div>
+                  <div className="relative aspect-square overflow-hidden">
+                    <Image
+                      src={img.src}
+                      alt={img.alt}
+                      width={600}
+                      height={600}
+                      className={`gallery-float-image w-full h-full object-cover ${
+                        isVisible ? floatVariants[index % floatVariants.length] : ""
+                      }`}
+                      style={{ animationDelay: `${index * 0.3}s` }}
+                    />
+                  </div>
                   <div className="absolute inset-0 bg-black/0 transition-all duration-300 group-hover:bg-black/30" />
                   <div className="absolute inset-0 flex items-end p-4 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                     <p className="font-mono text-xs text-cream">{img.alt}</p>
