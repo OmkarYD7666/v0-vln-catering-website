@@ -1,21 +1,61 @@
 "use client"
 
-import { useEffect, useRef, useState } from "react"
+import { useEffect, useRef, useState, useCallback } from "react"
 import { ChevronDown } from "lucide-react"
 
 const heroStats = [
-  { value: "25+", label: "Years of Excellence" },
-  { value: "150+", label: "Meals Daily" },
-  { value: "35+", label: "Skilled Chefs" },
-  { value: "20+", label: "Corporate Partners" },
+  { value: 25, suffix: "+", label: "Years of Excellence" },
+  { value: 150, suffix: "+", label: "Meals Daily" },
+  { value: 35, suffix: "+", label: "Skilled Chefs" },
+  { value: 20, suffix: "+", label: "Corporate Partners" },
 ]
+
+// Custom hook for animated counting
+function useCountUp(end: number, duration: number = 2500, delay: number = 0, start: boolean = false) {
+  const [count, setCount] = useState(0)
+  
+  useEffect(() => {
+    if (!start) return
+    
+    let startTime: number | null = null
+    let animationFrame: number
+    
+    const delayTimeout = setTimeout(() => {
+      const animate = (timestamp: number) => {
+        if (!startTime) startTime = timestamp
+        const progress = Math.min((timestamp - startTime) / duration, 1)
+        
+        // Ease-out cubic for smooth deceleration
+        const easeOut = 1 - Math.pow(1 - progress, 3)
+        setCount(Math.floor(easeOut * end))
+        
+        if (progress < 1) {
+          animationFrame = requestAnimationFrame(animate)
+        }
+      }
+      
+      animationFrame = requestAnimationFrame(animate)
+    }, delay)
+    
+    return () => {
+      clearTimeout(delayTimeout)
+      if (animationFrame) cancelAnimationFrame(animationFrame)
+    }
+  }, [end, duration, delay, start])
+  
+  return count
+}
 
 export default function HeroSection() {
   const [isVisible, setIsVisible] = useState(false)
+  const [startCounting, setStartCounting] = useState(false)
   const videoRef = useRef<HTMLVideoElement>(null)
 
   useEffect(() => {
     setIsVisible(true)
+    // Delay counting start for entrance animation
+    const timer = setTimeout(() => setStartCounting(true), 800)
+    return () => clearTimeout(timer)
   }, [])
 
   return (
@@ -105,15 +145,13 @@ export default function HeroSection() {
           }`}
           style={{ animationDelay: "0.5s" }}
         >
-          {heroStats.map((stat) => (
-            <div key={stat.label} className="flex flex-col items-center px-4 py-2">
-              <span className="text-gold-gradient font-sans text-3xl font-bold md:text-4xl">
-                {stat.value}
-              </span>
-              <span className="mt-1 font-mono text-xs uppercase tracking-wider text-foreground/50">
-                {stat.label}
-              </span>
-            </div>
+          {heroStats.map((stat, index) => (
+            <StatItem 
+              key={stat.label} 
+              stat={stat} 
+              index={index} 
+              startCounting={startCounting} 
+            />
           ))}
         </div>
 
@@ -127,5 +165,30 @@ export default function HeroSection() {
         </a>
       </div>
     </section>
+  )
+}
+
+// Separate component for animated stat item
+function StatItem({ 
+  stat, 
+  index, 
+  startCounting 
+}: { 
+  stat: { value: number; suffix: string; label: string }
+  index: number
+  startCounting: boolean 
+}) {
+  // Stagger delay: each stat starts 300ms after the previous
+  const count = useCountUp(stat.value, 2500, index * 300, startCounting)
+  
+  return (
+    <div className="flex flex-col items-center px-4 py-2">
+      <span className="text-gold-gradient font-sans text-3xl font-bold md:text-4xl">
+        {count}{stat.suffix}
+      </span>
+      <span className="mt-1 font-mono text-xs uppercase tracking-wider text-foreground/50">
+        {stat.label}
+      </span>
+    </div>
   )
 }

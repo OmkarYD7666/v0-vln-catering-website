@@ -34,16 +34,20 @@ export default function Navbar() {
       }`}
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-        {/* Logo */}
-        <a href="#home" className="flex items-center gap-3">
-          <Image
-            src="/images/logo.png"
-            alt="VLN Caterers Logo"
-            width={60}
-            height={60}
-            className="h-12 w-auto lg:h-14"
-            priority
-          />
+        {/* Logo with luxury shine effect */}
+        <a href="#home" className="group flex items-center gap-3">
+          <div className="logo-container relative overflow-hidden rounded-full transition-all duration-500 group-hover:scale-105 group-hover:brightness-110">
+            <Image
+              src="/images/logo.png"
+              alt="VLN Caterers Logo"
+              width={80}
+              height={80}
+              className="h-14 w-auto sm:h-16 lg:h-[72px] drop-shadow-[0_0_8px_rgba(201,162,39,0.4)]"
+              priority
+            />
+            {/* Shine overlay */}
+            <div className="logo-shine absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent skew-x-12" />
+          </div>
           <div className="hidden sm:block">
             <p className="text-gold-gradient font-sans text-lg font-bold tracking-wider lg:text-xl">
               VLN Caterers
@@ -53,6 +57,31 @@ export default function Navbar() {
             </p>
           </div>
         </a>
+
+        {/* Logo shine animation styles */}
+        <style jsx global>{`
+          @keyframes logo-shine {
+            0% {
+              transform: translateX(-100%) skewX(-12deg);
+            }
+            100% {
+              transform: translateX(200%) skewX(-12deg);
+            }
+          }
+          
+          .logo-container {
+            box-shadow: 0 0 20px rgba(201, 162, 39, 0.2);
+          }
+          
+          .logo-container:hover {
+            box-shadow: 0 0 30px rgba(201, 162, 39, 0.4);
+          }
+          
+          .logo-shine {
+            animation: logo-shine 4s ease-in-out infinite;
+            animation-delay: 2s;
+          }
+        `}</style>
 
         {/* Desktop Navigation */}
         <ul className="hidden items-center gap-8 lg:flex">
