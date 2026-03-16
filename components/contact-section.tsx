@@ -123,26 +123,15 @@ export default function ContactSection() {
 
             {/* Business Hours */}
             <div className="mt-6 rounded-sm border border-gold/15 bg-gold/5 p-6">
-              <div className="flex items-center gap-3 mb-4">
+              <div className="flex items-center gap-3">
                 <Clock className="h-5 w-5 text-gold" />
                 <h3 className="font-sans text-base font-semibold text-cream">
                   Business Hours
                 </h3>
               </div>
-              <div className="grid grid-cols-2 gap-3">
-                <div>
-                  <p className="font-mono text-xs text-cream/70">Monday - Saturday</p>
-                  <p className="font-mono text-sm font-medium text-gold">
-                    9:00 AM - 9:00 PM
-                  </p>
-                </div>
-                <div>
-                  <p className="font-mono text-xs text-cream/70">Sunday</p>
-                  <p className="font-mono text-sm font-medium text-gold">
-                    10:00 AM - 6:00 PM
-                  </p>
-                </div>
-              </div>
+              <p className="mt-3 font-mono text-sm font-medium text-gold">
+                Open 365 Days
+              </p>
             </div>
 
             {/* Social Media Buttons */}
