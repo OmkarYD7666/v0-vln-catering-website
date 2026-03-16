@@ -1,5 +1,5 @@
 import Image from "next/image"
-import { Phone, Mail, MapPin, MessageCircle } from "lucide-react"
+import { Phone, Mail, MapPin, MessageCircle, Youtube, Instagram, Facebook } from "lucide-react"
 
 const footerLinks = [
   { label: "Home", href: "#home" },
@@ -147,8 +147,41 @@ export default function Footer() {
           </div>
         </div>
 
+        {/* Social Media Buttons */}
+        <div className="mt-12 flex justify-center">
+          <div className="flex items-center gap-5">
+            <a
+              href="https://youtube.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex h-12 w-12 items-center justify-center rounded-full border border-gold/20 bg-background/50 transition-all duration-300 hover:-translate-y-1 hover:border-gold/50 hover:bg-gold/10 hover:shadow-[0_4px_20px_rgba(201,162,39,0.25)]"
+              aria-label="YouTube"
+            >
+              <Youtube className="h-5 w-5 text-cream/70 transition-colors duration-300 group-hover:text-gold" />
+            </a>
+            <a
+              href="https://instagram.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex h-12 w-12 items-center justify-center rounded-full border border-gold/20 bg-background/50 transition-all duration-300 hover:-translate-y-1 hover:border-gold/50 hover:bg-gold/10 hover:shadow-[0_4px_20px_rgba(201,162,39,0.25)]"
+              aria-label="Instagram"
+            >
+              <Instagram className="h-5 w-5 text-cream/70 transition-colors duration-300 group-hover:text-gold" />
+            </a>
+            <a
+              href="https://facebook.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex h-12 w-12 items-center justify-center rounded-full border border-gold/20 bg-background/50 transition-all duration-300 hover:-translate-y-1 hover:border-gold/50 hover:bg-gold/10 hover:shadow-[0_4px_20px_rgba(201,162,39,0.25)]"
+              aria-label="Facebook"
+            >
+              <Facebook className="h-5 w-5 text-cream/70 transition-colors duration-300 group-hover:text-gold" />
+            </a>
+          </div>
+        </div>
+
         {/* Bottom Bar */}
-        <div className="mt-16 border-t border-border/30 pt-8">
+        <div className="mt-8 border-t border-border/30 pt-8">
           <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
             <p className="font-mono text-xs text-muted-foreground">
               &copy; {new Date().getFullYear()} VLN Catering & Event Management. All rights reserved.

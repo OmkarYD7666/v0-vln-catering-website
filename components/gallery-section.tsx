@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useRef, useState } from "react"
+import { useEffect, useRef, useState, useCallback } from "react"
 import Image from "next/image"
 
 const galleryImages = [
@@ -19,10 +19,20 @@ const galleryImages = [
   { src: "/images/gallery/image13.jpg", alt: "Traditional catering setup", span: "" },
   { src: "/images/gallery/image14.jpg", alt: "Luxury food presentation", span: "" }
 ]
+
 export default function GallerySection() {
   const [isVisible, setIsVisible] = useState(false)
   const sectionRef = useRef<HTMLDivElement>(null)
   const [selectedImage, setSelectedImage] = useState<string | null>(null)
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
+  
+  // Track which image is displayed at each grid position
+  const [imagePositions, setImagePositions] = useState<number[]>(() => 
+    galleryImages.map((_, i) => i)
+  )
+  
+  // Track which images are currently swapping for animation
+  const [swappingPair, setSwappingPair] = useState<[number, number] | null>(null)
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -35,8 +45,140 @@ export default function GallerySection() {
     return () => observer.disconnect()
   }, [])
 
+  // Swap animation logic
+  const performSwap = useCallback(() => {
+    if (hoveredIndex !== null) return // Don't swap while hovering
+    
+    // Pick two random different positions to swap
+    const pos1 = Math.floor(Math.random() * galleryImages.length)
+    let pos2 = Math.floor(Math.random() * galleryImages.length)
+    while (pos2 === pos1) {
+      pos2 = Math.floor(Math.random() * galleryImages.length)
+    }
+    
+    // Start the swap animation
+    setSwappingPair([pos1, pos2])
+    
+    // After animation completes, update positions
+    setTimeout(() => {
+      setImagePositions(prev => {
+        const newPositions = [...prev]
+        const temp = newPositions[pos1]
+        newPositions[pos1] = newPositions[pos2]
+        newPositions[pos2] = temp
+        return newPositions
+      })
+      setSwappingPair(null)
+    }, 1200) // Match animation duration
+  }, [hoveredIndex])
+
+  // Set up interval for continuous swapping
+  useEffect(() => {
+    if (!isVisible) return
+    
+    const interval = setInterval(performSwap, 3500) // Swap every 3.5 seconds
+    return () => clearInterval(interval)
+  }, [isVisible, performSwap])
+
   return (
     <>
+      {/* CSS Keyframe Animations */}
+      <style jsx global>{`
+        .gallery-swap-container {
+          perspective: 1000px;
+        }
+        
+        .gallery-image-card {
+          transform-style: preserve-3d;
+          transition: transform 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+          will-change: transform;
+        }
+        
+        .gallery-image-card.swapping-out {
+          animation: flipOut 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+        
+        .gallery-image-card.swapping-in {
+          animation: flipIn 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+        
+        @keyframes flipOut {
+          0% {
+            transform: rotateY(0deg) scale(1);
+            opacity: 1;
+          }
+          50% {
+            transform: rotateY(90deg) scale(0.95);
+            opacity: 0.7;
+          }
+          100% {
+            transform: rotateY(180deg) scale(1);
+            opacity: 1;
+          }
+        }
+        
+        @keyframes flipIn {
+          0% {
+            transform: rotateY(-180deg) scale(1);
+            opacity: 1;
+          }
+          50% {
+            transform: rotateY(-90deg) scale(0.95);
+            opacity: 0.7;
+          }
+          100% {
+            transform: rotateY(0deg) scale(1);
+            opacity: 1;
+          }
+        }
+        
+        /* Subtle floating animation when not swapping */
+        @keyframes gentleFloat {
+          0%, 100% {
+            transform: translateY(0px) rotateY(0deg);
+          }
+          50% {
+            transform: translateY(-4px) rotateY(2deg);
+          }
+        }
+        
+        .gallery-image-card.floating {
+          animation: gentleFloat 6s ease-in-out infinite;
+        }
+        
+        .gallery-image-card.floating:nth-child(odd) {
+          animation-delay: -3s;
+        }
+        
+        .gallery-image-card.floating:nth-child(3n) {
+          animation-duration: 7s;
+        }
+        
+        .gallery-image-card.floating:nth-child(4n) {
+          animation-duration: 5s;
+          animation-delay: -1.5s;
+        }
+        
+        /* Hover state */
+        .gallery-image-wrapper:hover .gallery-image-card {
+          animation-play-state: paused !important;
+          transform: scale(1.05) rotateY(0deg) !important;
+        }
+        
+        .gallery-image-wrapper:hover {
+          z-index: 20;
+        }
+        
+        /* Smooth image transition */
+        .gallery-image-inner {
+          transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        
+        .gallery-image-wrapper:hover .gallery-image-inner {
+          transform: scale(1.08);
+        }
+      `}</style>
+
       <section
         id="gallery"
         ref={sectionRef}
@@ -67,39 +209,55 @@ export default function GallerySection() {
             </p>
           </div>
 
-          {/* Masonry Grid */}
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-4">
-            {galleryImages.map((img, index) => (
-              <div
-                key={img.src}
-                className={`group relative cursor-pointer overflow-hidden rounded-sm ${img.span} transition-all duration-700 ${
-                  isVisible
-                    ? "translate-y-0 opacity-100"
-                    : "translate-y-8 opacity-0"
-                }`}
-                style={{ transitionDelay: `${index * 80}ms` }}
-                onClick={() => setSelectedImage(img.src)}
-              >
-                <div className="relative aspect-[4/3] overflow-hidden">
- <div className="relative aspect-square overflow-hidden">
-  <Image
-    src={img.src}
-    alt={img.alt}
-    width={600}
-    height={600}
-    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-  />
-</div>
-                  <div className="absolute inset-0 bg-black/0 transition-all duration-300 group-hover:bg-black/30" />
-                  <div className="absolute inset-0 flex items-end p-4 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                    <p className="font-mono text-xs text-cream">{img.alt}</p>
+          {/* Masonry Grid with swapping animation */}
+          <div className="gallery-swap-container grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-4">
+            {galleryImages.map((gridSlot, gridIndex) => {
+              const imageIndex = imagePositions[gridIndex]
+              const img = galleryImages[imageIndex]
+              const isSwapping = swappingPair && (swappingPair[0] === gridIndex || swappingPair[1] === gridIndex)
+              const isSwappingOut = swappingPair && swappingPair[0] === gridIndex
+              const isSwappingIn = swappingPair && swappingPair[1] === gridIndex
+              
+              return (
+                <div
+                  key={gridIndex}
+                  className={`gallery-image-wrapper group relative cursor-pointer overflow-hidden rounded-sm ${gridSlot.span} transition-all duration-700 ${
+                    isVisible
+                      ? "translate-y-0 opacity-100"
+                      : "translate-y-8 opacity-0"
+                  }`}
+                  style={{ transitionDelay: `${gridIndex * 80}ms` }}
+                  onClick={() => setSelectedImage(img.src)}
+                  onMouseEnter={() => setHoveredIndex(gridIndex)}
+                  onMouseLeave={() => setHoveredIndex(null)}
+                >
+                  <div className="relative aspect-[4/3] overflow-hidden">
+                    <div 
+                      className={`gallery-image-card relative aspect-square overflow-hidden ${
+                        isSwappingOut ? 'swapping-out' : 
+                        isSwappingIn ? 'swapping-in' : 
+                        (isVisible && !isSwapping ? 'floating' : '')
+                      }`}
+                    >
+                      <Image
+                        src={img.src}
+                        alt={img.alt}
+                        width={600}
+                        height={600}
+                        className="gallery-image-inner w-full h-full object-cover"
+                      />
+                    </div>
+                    <div className="absolute inset-0 bg-black/0 transition-all duration-300 group-hover:bg-black/30" />
+                    <div className="absolute inset-0 flex items-end p-4 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                      <p className="font-mono text-xs text-cream">{img.alt}</p>
+                    </div>
+                    {/* Gold corner accent */}
+                    <div className="absolute left-0 top-0 h-0 w-0 border-l-2 border-t-2 border-gold/0 transition-all duration-500 group-hover:h-8 group-hover:w-8 group-hover:border-gold/60" />
+                    <div className="absolute bottom-0 right-0 h-0 w-0 border-b-2 border-r-2 border-gold/0 transition-all duration-500 group-hover:h-8 group-hover:w-8 group-hover:border-gold/60" />
                   </div>
-                  {/* Gold corner accent */}
-                  <div className="absolute left-0 top-0 h-0 w-0 border-l-2 border-t-2 border-gold/0 transition-all duration-500 group-hover:h-8 group-hover:w-8 group-hover:border-gold/60" />
-                  <div className="absolute bottom-0 right-0 h-0 w-0 border-b-2 border-r-2 border-gold/0 transition-all duration-500 group-hover:h-8 group-hover:w-8 group-hover:border-gold/60" />
                 </div>
-              </div>
-            ))}
+              )
+            })}
           </div>
         </div>
       </section>

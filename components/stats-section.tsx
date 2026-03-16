@@ -50,10 +50,10 @@ function AnimatedCounter({ end, suffix = "", duration = 2000 }: CounterProps) {
 }
 
 const stats = [
-  { end: 15, suffix: "+", label: "Years of Trust" },
-  { end: 500, suffix: "+", label: "Events Catered" },
-  { end: 10000, suffix: "+", label: "Meals Served Daily" },
-  { end: 50, suffix: "+", label: "Corporate Partners" },
+  { end: 25, suffix: "+", label: "Years of Trust" },
+  { end: 10000, suffix: "+", label: "Events Catered" },
+  { end: 150, suffix: "+", label: "Meals Served Daily" },
+  { end: 20, suffix: "+", label: "Corporate Partners" },
 ]
 
 export default function StatsSection() {
