@@ -23,8 +23,8 @@ export default function NostalgiaSection() {
       {/* Parallax Background */}
       <div className="relative min-h-[70vh]">
         <Image
-          src="/images/thali.jpg"
-          alt="Authentic Indian thali"
+          src="/images/curry-preparation.jpg"
+          alt="Traditional Indian curry preparation"
           fill
           className="object-cover"
           sizes="100vw"
