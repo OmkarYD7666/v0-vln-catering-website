@@ -97,7 +97,7 @@ export default function HygieneSection() {
               <div className="absolute inset-0 bg-gradient-to-t from-darker-bg/50 to-transparent" />
             </div>
             {/* ISO Badge */}
-            <div className="absolute -bottom-4 right-4 flex items-center gap-3 rounded-sm border border-gold/30 bg-card p-4 shadow-xl shadow-black/30 md:right-8">
+            <div className="absolute -bottom-4 right-4 flex items-center gap-3 rounded-sm border border-gold/30 bg-card p-4 shadow-xl shadow-black/10 md:right-8">
               <ShieldCheck className="h-8 w-8 text-gold" />
               <div>
                 <p className="font-sans text-sm font-bold text-cream">ISO 22000</p>

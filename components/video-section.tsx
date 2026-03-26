@@ -93,7 +93,7 @@ function VideoCard({
         {/* Mute button */}
         <button
           onClick={toggleMute}
-          className="absolute bottom-4 right-4 flex h-9 w-9 items-center justify-center rounded-full bg-black/50 text-cream/70 backdrop-blur-sm transition-all hover:text-gold"
+          className="absolute bottom-4 right-4 flex h-9 w-9 items-center justify-center rounded-full bg-black/50 text-white/70 backdrop-blur-sm transition-all hover:text-gold"
           aria-label={isMuted ? "Unmute" : "Mute"}
         >
           {isMuted ? (

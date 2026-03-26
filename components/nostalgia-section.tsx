@@ -42,7 +42,7 @@ export default function NostalgiaSection() {
             <span className="mb-4 inline-block font-mono text-xs uppercase tracking-[0.3em] text-gold">
               Our Philosophy
             </span>
-            <h2 className="mb-8 font-sans text-3xl font-bold leading-tight text-cream md:text-5xl lg:text-6xl">
+            <h2 className="mb-8 font-sans text-3xl font-bold leading-tight text-white md:text-5xl lg:text-6xl">
               The <span className="text-gold-gradient">Authentic Taste</span> of India,
               <br />
               Served with Nostalgia
@@ -54,13 +54,13 @@ export default function NostalgiaSection() {
               <div className="h-px w-16 bg-gold/40" />
             </div>
 
-            <p className="mb-6 font-mono text-sm leading-relaxed text-cream/70 md:text-base">
+            <p className="mb-6 font-mono text-sm leading-relaxed text-white/70 md:text-base">
               Every dish at VLN is a journey through the heartlands of India. Our recipes
               are inspired by generations of culinary wisdom -- the exact same tadka your
               grandmother perfected, the same slow-cooked dal that filled your childhood
               home with warmth, the same hand-rolled rotis that tasted like love.
             </p>
-            <p className="font-mono text-sm leading-relaxed text-cream/70 md:text-base">
+            <p className="font-mono text-sm leading-relaxed text-white/70 md:text-base">
               We don&apos;t just cater food. We serve memories. Every spice is measured with
               care, every gravy simmered to perfection, every sweet prepared with the same
               devotion that Indian households have practised for centuries. This is not
@@ -73,7 +73,7 @@ export default function NostalgiaSection() {
                 <p className="text-gold-gradient font-sans text-3xl font-bold md:text-4xl">
                   200+
                 </p>
-                <p className="mt-1 font-mono text-xs uppercase tracking-wider text-cream/50">
+                <p className="mt-1 font-mono text-xs uppercase tracking-wider text-white/50">
                   Veg Dishes
                 </p>
               </div>
@@ -81,7 +81,7 @@ export default function NostalgiaSection() {
                 <p className="text-gold-gradient font-sans text-3xl font-bold md:text-4xl">
                   50+
                 </p>
-                <p className="mt-1 font-mono text-xs uppercase tracking-wider text-cream/50">
+                <p className="mt-1 font-mono text-xs uppercase tracking-wider text-white/50">
                   Sweet Varieties
                 </p>
               </div>
@@ -89,7 +89,7 @@ export default function NostalgiaSection() {
                 <p className="text-gold-gradient font-sans text-3xl font-bold md:text-4xl">
                   12+
                 </p>
-                <p className="mt-1 font-mono text-xs uppercase tracking-wider text-cream/50">
+                <p className="mt-1 font-mono text-xs uppercase tracking-wider text-white/50">
                   Live Counters
                 </p>
               </div>

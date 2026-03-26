@@ -24,8 +24,8 @@ export default function WhatsAppButton() {
     <div className="fixed bottom-6 right-6 z-40 flex flex-col items-end gap-3">
       {/* Tooltip */}
       {showTooltip && (
-        <div className="flex items-center gap-2 rounded-lg border border-border/30 bg-card px-4 py-3 shadow-xl shadow-black/30 animate-fade-in-up">
-          <p className="font-mono text-xs text-cream">
+        <div className="flex items-center gap-2 rounded-lg border border-border/30 bg-card px-4 py-3 shadow-xl shadow-black/10 animate-fade-in-up">
+          <p className="font-mono text-xs text-foreground">
             Need catering services? Chat with us!
           </p>
           <button
