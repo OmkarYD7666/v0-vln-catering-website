@@ -247,7 +247,7 @@ export default function GallerySection() {
                         className="gallery-image-inner w-full h-full object-cover"
                       />
                     </div>
-                    <div className="absolute inset-0 bg-black/0 transition-all duration-300 group-hover:bg-black/30" />
+                    <div className="absolute inset-0 bg-transparent transition-all duration-300 group-hover:bg-black/10" />
                     <div className="absolute inset-0 flex items-end p-4 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                       <p className="font-mono text-xs text-cream">{img.alt}</p>
                     </div>
