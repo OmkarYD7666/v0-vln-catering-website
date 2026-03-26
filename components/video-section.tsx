@@ -7,8 +7,7 @@ const videos = [
   {
     title: "Grand Wedding Setup",
     description: "A glimpse into how we transform venues into culinary wonderlands",
-    src: "https://videos.pexels.com/video-files/3195394/3195394-uhd_2560_1440_25fps.mp4",
-    poster: "/images/wedding-catering.jpg",
+    src: "/videos/wedding.mp4",
   },
   {
     title: "Live Kitchen in Action",
@@ -19,8 +18,7 @@ const videos = [
   {
     title: "Corporate Excellence",
     description: "Precision catering for Pune's leading IT companies and corporations",
-    src: "https://videos.pexels.com/video-files/6893990/6893990-uhd_2732_1440_25fps.mp4",
-    poster: "/images/corporate-event.jpg",
+    src: "/videos/corporate.mp4",
   },
 ]
 
