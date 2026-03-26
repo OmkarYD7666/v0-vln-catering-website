@@ -97,7 +97,7 @@ export default function AboutSection() {
               <div className="absolute inset-0 bg-gradient-to-t from-darker-bg/60 to-transparent" />
             </div>
             {/* Floating card */}
-            <div className="absolute -bottom-6 -right-4 rounded-sm border border-gold/20 bg-card p-5 shadow-xl shadow-black/30 md:-right-8">
+            <div className="absolute -bottom-6 -right-4 rounded-sm border border-gold/20 bg-card p-5 shadow-xl shadow-black/10 md:-right-8">
               <p className="text-gold-gradient font-sans text-3xl font-bold">25+</p>
               <p className="font-mono text-xs uppercase tracking-wider text-muted-foreground">
                 Years in Business

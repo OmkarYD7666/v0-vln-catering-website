@@ -4,25 +4,25 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* VLN Catering Theme - Dark Chocolate Brown Luxury */
-  --background: #140C09;
-  --foreground: #FFFFFF;
-  --card: #1C120E;
-  --card-foreground: #FFFFFF;
-  --popover: #1C120E;
-  --popover-foreground: #FFFFFF;
+  /* VLN Catering Theme - Light Premium Cream */
+  --background: #F5EFE6;
+  --foreground: #1A1A1A;
+  --card: #FFFFFF;
+  --card-foreground: #1A1A1A;
+  --popover: #FFFFFF;
+  --popover-foreground: #1A1A1A;
   --primary: #C9A227;
-  --primary-foreground: #140C09;
-  --secondary: #241712;
-  --secondary-foreground: #C9A227;
-  --muted: #241712;
-  --muted-foreground: #9A8A7C;
+  --primary-foreground: #FFFFFF;
+  --secondary: #EDE8DF;
+  --secondary-foreground: #1A1A1A;
+  --muted: #EDE8DF;
+  --muted-foreground: #5A5A5A;
   --accent: #C9A227;
-  --accent-foreground: #140C09;
+  --accent-foreground: #FFFFFF;
   --destructive: #8B3A3A;
   --destructive-foreground: #FFFFFF;
-  --border: #3D2A22;
-  --input: #2A1C16;
+  --border: #D4CFC6;
+  --input: #EDE8DF;
   --ring: #C9A227;
   --chart-1: #C9A227;
   --chart-2: #8B3A3A;
@@ -31,14 +31,14 @@
   --chart-5: #5D4037;
   --radius: 0.5rem;
 
-  /* Custom VLN tokens - Dark Chocolate Brown Luxury */
+  /* Custom VLN tokens - Light Premium Cream */
   --gold: #C9A227;
   --gold-light: #D4B84A;
   --gold-dark: #A68520;
   --crimson: #8B3A3A;
-  --cream: #FFFFFF;
-  --dark-bg: #1C120E;
-  --darker-bg: #140C09;
+  --cream: #1A1A1A;
+  --dark-bg: #F5EFE6;
+  --darker-bg: #EDE8DF;
 }
 
 @theme inline {
@@ -91,15 +91,15 @@
   }
 }
 
-/* Custom scrollbar - Dark chocolate brown theme */
+/* Custom scrollbar - Light cream theme */
 ::-webkit-scrollbar {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #140C09;
+  background: #F5EFE6;
 }
 ::-webkit-scrollbar-thumb {
-  background: #3D2A22;
+  background: #D4CFC6;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
@@ -153,7 +153,7 @@ html {
 }
 .hover-lift:hover {
   transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
 }
 
 /* Gold border glow - Premium accent */
@@ -169,9 +169,9 @@ html {
   background-size: cover;
 }
 
-/* Video overlay - Dark chocolate brown for hero readability */
+/* Video overlay - Soft cream overlay for hero readability */
 .video-overlay {
-  background: linear-gradient(to bottom, rgba(20,12,9,0.85) 0%, rgba(20,12,9,0.5) 40%, rgba(20,12,9,0.85) 100%);
+  background: linear-gradient(to bottom, rgba(26,26,26,0.75) 0%, rgba(26,26,26,0.4) 40%, rgba(26,26,26,0.75) 100%);
 }
 
 /* Client marquee scroll */

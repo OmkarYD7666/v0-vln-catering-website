@@ -269,7 +269,7 @@ export default function GallerySection() {
           onClick={() => setSelectedImage(null)}
         >
           <button
-            className="absolute right-6 top-6 font-mono text-2xl text-cream/60 transition-colors hover:text-cream"
+            className="absolute right-6 top-6 font-mono text-2xl text-white/60 transition-colors hover:text-white"
             onClick={() => setSelectedImage(null)}
             aria-label="Close lightbox"
           >

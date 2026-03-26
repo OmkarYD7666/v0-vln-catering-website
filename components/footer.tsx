@@ -154,28 +154,28 @@ export default function Footer() {
               href="https://youtube.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex h-12 w-12 items-center justify-center rounded-full border border-gold/20 bg-background/50 transition-all duration-300 hover:-translate-y-1 hover:border-gold/50 hover:bg-gold/10 hover:shadow-[0_4px_20px_rgba(201,162,39,0.25)]"
+              className="group flex h-12 w-12 items-center justify-center rounded-full border border-gold/20 bg-card/50 transition-all duration-300 hover:-translate-y-1 hover:border-gold/50 hover:bg-gold/10 hover:shadow-[0_4px_20px_rgba(201,162,39,0.25)]"
               aria-label="YouTube"
             >
-              <Youtube className="h-5 w-5 text-cream/70 transition-colors duration-300 group-hover:text-gold" />
+              <Youtube className="h-5 w-5 text-foreground/70 transition-colors duration-300 group-hover:text-gold" />
             </a>
             <a
               href="https://instagram.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex h-12 w-12 items-center justify-center rounded-full border border-gold/20 bg-background/50 transition-all duration-300 hover:-translate-y-1 hover:border-gold/50 hover:bg-gold/10 hover:shadow-[0_4px_20px_rgba(201,162,39,0.25)]"
+              className="group flex h-12 w-12 items-center justify-center rounded-full border border-gold/20 bg-card/50 transition-all duration-300 hover:-translate-y-1 hover:border-gold/50 hover:bg-gold/10 hover:shadow-[0_4px_20px_rgba(201,162,39,0.25)]"
               aria-label="Instagram"
             >
-              <Instagram className="h-5 w-5 text-cream/70 transition-colors duration-300 group-hover:text-gold" />
+              <Instagram className="h-5 w-5 text-foreground/70 transition-colors duration-300 group-hover:text-gold" />
             </a>
             <a
               href="https://facebook.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex h-12 w-12 items-center justify-center rounded-full border border-gold/20 bg-background/50 transition-all duration-300 hover:-translate-y-1 hover:border-gold/50 hover:bg-gold/10 hover:shadow-[0_4px_20px_rgba(201,162,39,0.25)]"
+              className="group flex h-12 w-12 items-center justify-center rounded-full border border-gold/20 bg-card/50 transition-all duration-300 hover:-translate-y-1 hover:border-gold/50 hover:bg-gold/10 hover:shadow-[0_4px_20px_rgba(201,162,39,0.25)]"
               aria-label="Facebook"
             >
-              <Facebook className="h-5 w-5 text-cream/70 transition-colors duration-300 group-hover:text-gold" />
+              <Facebook className="h-5 w-5 text-foreground/70 transition-colors duration-300 group-hover:text-gold" />
             </a>
           </div>
         </div>
