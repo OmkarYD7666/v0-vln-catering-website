@@ -94,7 +94,6 @@ export default function AboutSection() {
                 quality={75}
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-darker-bg/60 to-transparent" />
             </div>
             {/* Floating card */}
             <div className="absolute -bottom-6 -right-4 rounded-sm border border-gold/20 bg-card p-5 shadow-xl shadow-black/10 md:-right-8">
