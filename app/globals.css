@@ -4,41 +4,41 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* VLN Catering Theme - Light Premium Cream */
-  --background: #F8F5F0;
+  /* VLN Catering Theme - Warm Biscuit Premium */
+  --background: #F3E5C8;
   --foreground: #1A1A1A;
   --card: #FFFFFF;
   --card-foreground: #1A1A1A;
   --popover: #FFFFFF;
   --popover-foreground: #1A1A1A;
-  --primary: #C9A227;
+  --primary: #D4AF37;
   --primary-foreground: #FFFFFF;
-  --secondary: #FAF7F2;
+  --secondary: #FAF1DC;
   --secondary-foreground: #1A1A1A;
-  --muted: #F5F2ED;
-  --muted-foreground: #5A5A5A;
-  --accent: #C9A227;
+  --muted: #F5EBD5;
+  --muted-foreground: #4A4A4A;
+  --accent: #D4AF37;
   --accent-foreground: #FFFFFF;
   --destructive: #8B3A3A;
   --destructive-foreground: #FFFFFF;
-  --border: #E8E4DE;
-  --input: #F5F2ED;
-  --ring: #C9A227;
-  --chart-1: #C9A227;
+  --border: #E5D9C3;
+  --input: #F5EBD5;
+  --ring: #D4AF37;
+  --chart-1: #D4AF37;
   --chart-2: #8B3A3A;
   --chart-3: #9A8A7C;
   --chart-4: #B89B5E;
   --chart-5: #5D4037;
   --radius: 0.5rem;
 
-  /* Custom VLN tokens - Light Premium Cream */
-  --gold: #C9A227;
-  --gold-light: #D4B84A;
-  --gold-dark: #A68520;
+  /* Custom VLN tokens - Warm Biscuit Premium */
+  --gold: #D4AF37;
+  --gold-light: #E0C35A;
+  --gold-dark: #B8962E;
   --crimson: #8B3A3A;
-  --cream: #1A1A1A;
-  --dark-bg: #F8F5F0;
-  --darker-bg: #FAF7F2;
+  --cream: #111111;
+  --dark-bg: #F3E5C8;
+  --darker-bg: #FAF1DC;
 }
 
 @theme inline {
@@ -91,19 +91,19 @@
   }
 }
 
-/* Custom scrollbar - Light cream theme */
+/* Custom scrollbar - Warm biscuit theme */
 ::-webkit-scrollbar {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #F8F5F0;
+  background: #F3E5C8;
 }
 ::-webkit-scrollbar-thumb {
-  background: #E0DCD6;
+  background: #E5D9C3;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #C9A227;
+  background: #D4AF37;
 }
 
 /* Smooth scroll */
@@ -113,7 +113,7 @@ html {
 
 /* Gold gradient text utility - Premium gold accent */
 .text-gold-gradient {
-  background: linear-gradient(135deg, #D4B84A, #C9A227, #A68520);
+  background: linear-gradient(135deg, #E0C35A, #D4AF37, #B8962E);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -126,7 +126,7 @@ html {
 }
 
 .gold-shimmer {
-  background: linear-gradient(90deg, #A68520, #D4B84A, #C9A227, #D4B84A, #A68520);
+  background: linear-gradient(90deg, #B8962E, #E0C35A, #D4AF37, #E0C35A, #B8962E);
   background-size: 200% 100%;
   animation: shimmer 3s ease-in-out infinite;
 }
@@ -158,7 +158,7 @@ html {
 
 /* Gold border glow - Premium accent */
 .gold-glow {
-  box-shadow: 0 0 20px rgba(201, 162, 39, 0.15);
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.15);
 }
 
 /* Parallax image */
