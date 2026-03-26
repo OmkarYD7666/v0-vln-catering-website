@@ -5,7 +5,7 @@
 
 :root {
   /* VLN Catering Theme - Light Premium Cream */
-  --background: #F5EFE6;
+  --background: #F8F5F0;
   --foreground: #1A1A1A;
   --card: #FFFFFF;
   --card-foreground: #1A1A1A;
@@ -13,16 +13,16 @@
   --popover-foreground: #1A1A1A;
   --primary: #C9A227;
   --primary-foreground: #FFFFFF;
-  --secondary: #EDE8DF;
+  --secondary: #FAF7F2;
   --secondary-foreground: #1A1A1A;
-  --muted: #EDE8DF;
+  --muted: #F5F2ED;
   --muted-foreground: #5A5A5A;
   --accent: #C9A227;
   --accent-foreground: #FFFFFF;
   --destructive: #8B3A3A;
   --destructive-foreground: #FFFFFF;
-  --border: #D4CFC6;
-  --input: #EDE8DF;
+  --border: #E8E4DE;
+  --input: #F5F2ED;
   --ring: #C9A227;
   --chart-1: #C9A227;
   --chart-2: #8B3A3A;
@@ -37,8 +37,8 @@
   --gold-dark: #A68520;
   --crimson: #8B3A3A;
   --cream: #1A1A1A;
-  --dark-bg: #F5EFE6;
-  --darker-bg: #EDE8DF;
+  --dark-bg: #F8F5F0;
+  --darker-bg: #FAF7F2;
 }
 
 @theme inline {
@@ -96,10 +96,10 @@
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #F5EFE6;
+  background: #F8F5F0;
 }
 ::-webkit-scrollbar-thumb {
-  background: #D4CFC6;
+  background: #E0DCD6;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
