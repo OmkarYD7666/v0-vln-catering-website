@@ -182,7 +182,7 @@ export default function ContactSection() {
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3779.5438903428254!2d73.86453987520405!3d18.577611682498568!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c4e5d5d5d5d5%3A0x5d5d5d5d5d5d5d5d!2sWadgaon%20Sheri%2C%20Pune!5e0!3m2!1sen!2sin!4v1700000000000"
                 width="100%"
                 height="400"
-                style={{ border: 0, filter: "invert(90%) hue-rotate(180deg) brightness(0.9) contrast(1.2)" }}
+                style={{ border: 0, filter: "sepia(15%) saturate(80%) brightness(1.02)" }}
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"

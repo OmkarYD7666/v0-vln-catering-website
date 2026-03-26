@@ -29,7 +29,7 @@ export default function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled
-          ? "bg-darker-bg/95 backdrop-blur-md shadow-lg shadow-black/30"
+          ? "bg-background/95 backdrop-blur-md shadow-lg shadow-black/5"
           : "bg-transparent"
       }`}
     >
@@ -125,7 +125,7 @@ export default function Navbar() {
           isMobileOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
         }`}
       >
-        <div className="border-t border-gold/10 bg-darker-bg/98 px-6 pb-8 pt-4 backdrop-blur-xl">
+        <div className="border-t border-gold/10 bg-background/98 px-6 pb-8 pt-4 backdrop-blur-xl">
           <ul className="flex flex-col gap-4">
             {navLinks.map((link) => (
               <li key={link.href}>
