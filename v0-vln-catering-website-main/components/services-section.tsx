@@ -123,8 +123,7 @@ export default function ServicesSection() {
                   quality={75}
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-card via-card/20 to-transparent" />
-                <div className="absolute bottom-4 left-4 flex h-12 w-12 items-center justify-center rounded-sm border border-gold/30 bg-card/80 backdrop-blur-sm">
+                <div className="absolute bottom-4 left-4 flex h-12 w-12 items-center justify-center rounded-sm border border-gold/30 bg-card/90">
                   <service.icon className="h-6 w-6 text-gold" />
                 </div>
               </div>

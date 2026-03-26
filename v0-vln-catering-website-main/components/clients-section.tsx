@@ -2,7 +2,6 @@
 
 import { useEffect, useRef, useState, useCallback } from "react"
 import { Star, ChevronLeft, ChevronRight } from "lucide-react"
-import Image from "next/image"
 import {
   Carousel,
   CarouselContent,
@@ -10,16 +9,16 @@ import {
   type CarouselApi,
 } from "@/components/ui/carousel"
 
-// Client logos data with actual logo images
+// Client names data (text-based display)
 const clients = [
-  { name: "SLB", logo: "/logos/slb.png" },
-  { name: "ABIL", logo: "/logos/abil.png" },
-  { name: "Michelin", logo: "/logos/michelin.png" },
-  { name: "Amdocs", logo: "/logos/amdocs.jpg" },
-  { name: "Four Points", logo: "/logos/fourpoints.png" },
-  { name: "Hyatt", logo: "/logos/hyatt.png" },
-  { name: "Hyatt Regency", logo: "/logos/hyatt-regency.png" },
-  { name: "Pitney Bowes", logo: "/logos/pitneybowes.png" },
+  { name: "SLB" },
+  { name: "ABIL" },
+  { name: "Michelin" },
+  { name: "Amdocs" },
+  { name: "Four Points" },
+  { name: "Hyatt" },
+  { name: "Hyatt Regency" },
+  { name: "Pitney Bowes" },
 ]
 
 const testimonials = [
@@ -115,8 +114,8 @@ const testimonials = [
   },
 ]
 
-// Infinite scrolling logo carousel component
-function LogoCarousel() {
+// Client names display component (text-based, no logos)
+function ClientNamesDisplay() {
   const [isPaused, setIsPaused] = useState(false)
   
   // Duplicate clients array for seamless infinite scroll
@@ -124,40 +123,26 @@ function LogoCarousel() {
 
   return (
     <div 
-      className="relative overflow-hidden"
+      className="relative overflow-hidden py-4"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
-      {/* Gradient fade on edges */}
-      <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-16 bg-gradient-to-r from-background to-transparent" />
-      <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-16 bg-gradient-to-l from-background to-transparent" />
-      
       {/* Scrolling container */}
       <div 
-        className={`flex gap-6 ${isPaused ? '[animation-play-state:paused]' : ''}`}
+        className={`flex gap-8 ${isPaused ? '[animation-play-state:paused]' : ''}`}
         style={{
-          animation: 'scroll 30s linear infinite',
+          animation: 'scroll 25s linear infinite',
         }}
       >
         {duplicatedClients.map((client, index) => (
           <div
             key={`${client.name}-${index}`}
-            className="group flex min-w-[160px] flex-col items-center justify-center rounded-lg border border-border/20 bg-card/50 p-5 transition-all duration-300 hover:border-[#C9A227]/30 hover:bg-card sm:min-w-[180px] md:min-w-[200px]"
+            className="group flex min-w-[180px] items-center justify-center rounded-sm border border-border/20 bg-card/30 px-8 py-6 transition-all duration-300 hover:border-[#C9A227]/40 hover:bg-card/60 sm:min-w-[200px] md:min-w-[220px]"
           >
-            {/* Logo image */}
-            <div className="mb-3 flex h-[70px] w-full items-center justify-center sm:h-[80px]">
-              <div className="relative h-[70px] w-[140px] grayscale transition-all duration-300 group-hover:grayscale-0 sm:h-[80px] sm:w-[160px]">
-                <Image
-                  src={client.logo}
-                  alt={`${client.name} logo`}
-                  fill
-                  className="object-contain"
-                  sizes="160px"
-                  unoptimized
-                />
-              </div>
-            </div>
-            <span className="text-center font-sans text-xs font-medium text-cream/60 transition-colors duration-300 group-hover:text-cream sm:text-sm">
+            <span 
+              className="text-center font-serif text-lg font-medium tracking-wide text-[#1A1A1A] transition-colors duration-300 group-hover:text-[#C9A227] dark:text-cream/80 dark:group-hover:text-[#C9A227] sm:text-xl md:text-2xl"
+              style={{ letterSpacing: '0.05em' }}
+            >
               {client.name}
             </span>
           </div>
@@ -321,8 +306,8 @@ export default function ClientsSection() {
             </p>
           </div>
 
-          {/* Client Logos Carousel */}
-          <LogoCarousel />
+          {/* Client Names Display */}
+          <ClientNamesDisplay />
         </div>
 
         {/* Divider */}

@@ -94,7 +94,6 @@ export default function HygieneSection() {
                 height={500}
                 className="h-auto w-full object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-darker-bg/50 to-transparent" />
             </div>
             {/* ISO Badge */}
             <div className="absolute -bottom-4 right-4 flex items-center gap-3 rounded-sm border border-gold/30 bg-card p-4 shadow-xl shadow-black/10 md:right-8">
