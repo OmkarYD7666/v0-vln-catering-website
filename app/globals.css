@@ -89,6 +89,10 @@
   body {
     @apply bg-background text-foreground;
     background-color: #F3E5C8 !important;
+    color: #1A1A1A !important;
+  }
+  html {
+    background-color: #F3E5C8 !important;
   }
 }
 
