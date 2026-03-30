@@ -9,19 +9,16 @@ const videos = [
     title: "Grand Wedding Setup",
     description: "A glimpse into how we transform venues into culinary wonderlands",
     src: "/videos/wedding.mp4",
-    poster: "/images/wedding-catering.jpg",
-  },
+    },
   {
-    title: "Live Kitchen in Action",
-    description: "Watch our chefs create magic at interactive cooking stations",
-    src: "/videos/live-kitchen.mp4",
-    poster: "/images/live-counter.jpg",
+    title: "Birthday Setup",
+    description: "Watch our Birthday setup",
+    src: "/videos/Birthday.mp4", 
   },
   {
     title: "Corporate Excellence",
     description: "Precision catering for Pune's leading IT companies and corporations",
     src: "/videos/corporate.mp4",
-    poster: "/images/corporate-event.jpg",
   },
 ]
 
