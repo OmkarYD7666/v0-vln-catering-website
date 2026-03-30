@@ -50,7 +50,7 @@ export default function AboutSection() {
     <section
       id="about"
       ref={sectionRef}
-      className="relative overflow-hidden bg-darker-bg py-24 lg:py-32"
+      className="relative overflow-hidden bg-[#F3E5C8] py-24 lg:py-32"
     >
       {/* Decorative elements */}
       <div className="absolute left-0 top-0 h-px w-full bg-gradient-to-r from-transparent via-gold/30 to-transparent" />

@@ -21,7 +21,7 @@ const services = [
 
 export default function Footer() {
   return (
-    <footer className="relative bg-darker-bg">
+    <footer className="relative bg-[#F3E5C8]">
       <div className="absolute left-0 top-0 h-px w-full bg-gradient-to-r from-transparent via-gold/30 to-transparent" />
 
       <div className="mx-auto max-w-7xl px-6 py-16 lg:py-20">

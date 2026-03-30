@@ -56,7 +56,7 @@ export default function HygieneSection() {
   }, [])
 
   return (
-    <section ref={sectionRef} className="relative bg-darker-bg py-24 lg:py-32">
+    <section ref={sectionRef} className="relative bg-[#FAF1DC] py-24 lg:py-32">
       <div className="absolute left-0 top-0 h-px w-full bg-gradient-to-r from-transparent via-gold/30 to-transparent" />
 
       <div className="mx-auto max-w-7xl px-6">
