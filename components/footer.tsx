@@ -21,7 +21,7 @@ const services = [
 
 export default function Footer() {
   return (
-    <footer className="relative bg-darker-bg">
+    <footer className="relative bg-[#F3E5C8]">
       <div className="absolute left-0 top-0 h-px w-full bg-gradient-to-r from-transparent via-gold/30 to-transparent" />
 
       <div className="mx-auto max-w-7xl px-6 py-16 lg:py-20">
@@ -45,11 +45,11 @@ export default function Footer() {
                 </p>
               </div>
             </div>
-            <p className="mb-4 font-mono text-xs leading-relaxed text-muted-foreground">
+            <p className="mb-4 font-mono text-xs leading-relaxed text-[#1A1A1A]/70">
               ISO Certified premium catering services delivering authentic Indian
               vegetarian cuisine to Pune&apos;s finest hotels, corporates, and events since 2009.
             </p>
-            <p className="mb-6 font-mono text-[10px] text-muted-foreground">
+            <p className="mb-6 font-mono text-[10px] text-[#1A1A1A]/70">
               <span className="text-gold font-semibold">Managing Director:</span> Mr. Gajanan Sharma
             </p>
             <div className="flex items-center gap-2 rounded-sm border border-gold/20 bg-gold/5 px-3 py-2 w-fit">
@@ -62,7 +62,7 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h4 className="mb-6 font-sans text-sm font-semibold uppercase tracking-wider text-cream">
+            <h4 className="mb-6 font-sans text-sm font-semibold uppercase tracking-wider text-[#1A1A1A]">
               Quick Links
             </h4>
             <ul className="flex flex-col gap-3">
@@ -82,7 +82,7 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <h4 className="mb-6 font-sans text-sm font-semibold uppercase tracking-wider text-cream">
+            <h4 className="mb-6 font-sans text-sm font-semibold uppercase tracking-wider text-[#1A1A1A]">
               Our Services
             </h4>
             <ul className="flex flex-col gap-3">
@@ -102,14 +102,14 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="mb-6 font-sans text-sm font-semibold uppercase tracking-wider text-cream">
+            <h4 className="mb-6 font-sans text-sm font-semibold uppercase tracking-wider text-[#1A1A1A]">
               Contact Us
             </h4>
             <ul className="flex flex-col gap-4">
               <li>
                 <a
                   href="tel:+918888872700"
-                  className="flex items-center gap-3 font-mono text-xs text-muted-foreground transition-colors hover:text-gold"
+                  className="flex items-center gap-3 font-mono text-xs text-[#1A1A1A]/70 transition-colors hover:text-gold"
                 >
                   <Phone className="h-4 w-4 flex-shrink-0 text-gold/60" />
                   +91 88888 72700
@@ -120,7 +120,7 @@ export default function Footer() {
                   href="https://wa.me/919673130070"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-3 font-mono text-xs text-muted-foreground transition-colors hover:text-gold"
+                  className="flex items-center gap-3 font-mono text-xs text-[#1A1A1A]/70 transition-colors hover:text-gold"
                 >
                   <MessageCircle className="h-4 w-4 flex-shrink-0 text-gold/60" />
                   +91 96731 30070
@@ -129,7 +129,7 @@ export default function Footer() {
               <li>
                 <a
                   href="mailto:operations@vln.com"
-                  className="flex items-center gap-3 font-mono text-xs text-muted-foreground transition-colors hover:text-gold"
+                  className="flex items-center gap-3 font-mono text-xs text-[#1A1A1A]/70 transition-colors hover:text-gold"
                 >
                   <Mail className="h-4 w-4 flex-shrink-0 text-gold/60" />
                   operations@vln.com
@@ -138,7 +138,7 @@ export default function Footer() {
               <li>
                 <div className="flex items-start gap-3">
                   <MapPin className="mt-0.5 h-4 w-4 flex-shrink-0 text-gold/60" />
-                  <span className="font-mono text-xs text-muted-foreground">
+                  <span className="font-mono text-xs text-[#1A1A1A]/70">
                     Anand Nagar Lane No.03, Wadgaon Sheri, Pune 411014
                   </span>
                 </div>
@@ -183,12 +183,12 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="mt-8 border-t border-border/30 pt-8">
           <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
-            <p className="font-mono text-xs text-muted-foreground">
+            <p className="font-mono text-xs text-[#1A1A1A]/70">
               &copy; {new Date().getFullYear()} VLN Catering & Event Management. All rights reserved.
             </p>
             <div className="flex items-center gap-2">
               <div className="h-1 w-1 rounded-full bg-gold/40" />
-              <p className="font-mono text-[10px] uppercase tracking-wider text-muted-foreground">
+              <p className="font-mono text-[10px] uppercase tracking-wider text-[#1A1A1A]/70">
                 Crafted with passion in Pune, India
               </p>
               <div className="h-1 w-1 rounded-full bg-gold/40" />

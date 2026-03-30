@@ -50,7 +50,7 @@ export default function AboutSection() {
     <section
       id="about"
       ref={sectionRef}
-      className="relative overflow-hidden bg-darker-bg py-24 lg:py-32"
+      className="relative overflow-hidden bg-[#F3E5C8] py-24 lg:py-32"
     >
       {/* Decorative elements */}
       <div className="absolute left-0 top-0 h-px w-full bg-gradient-to-r from-transparent via-gold/30 to-transparent" />
@@ -65,7 +65,7 @@ export default function AboutSection() {
           <span className="mb-4 inline-block font-mono text-xs uppercase tracking-[0.3em] text-gold">
             About Us
           </span>
-          <h2 className="mb-6 font-sans text-3xl font-bold text-cream md:text-5xl">
+          <h2 className="mb-6 font-sans text-3xl font-bold text-[#1A1A1A] md:text-5xl">
             A Legacy of <span className="text-gold-gradient">Culinary Excellence</span>
           </h2>
           <div className="mx-auto flex items-center justify-center gap-3">
@@ -98,7 +98,7 @@ export default function AboutSection() {
             {/* Floating card */}
             <div className="absolute -bottom-6 -right-4 rounded-sm border border-gold/20 bg-card p-5 shadow-xl shadow-black/10 md:-right-8">
               <p className="text-gold-gradient font-sans text-3xl font-bold">25+</p>
-              <p className="font-mono text-xs uppercase tracking-wider text-muted-foreground">
+              <p className="font-mono text-xs uppercase tracking-wider text-[#1A1A1A]/70">
                 Years in Business
               </p>
             </div>
@@ -112,16 +112,16 @@ export default function AboutSection() {
               isVisible ? "translate-x-0 opacity-100" : "translate-x-12 opacity-0"
             }`}
           >
-            <h3 className="mb-6 font-sans text-2xl font-semibold text-cream md:text-3xl">
+            <h3 className="mb-6 font-sans text-2xl font-semibold text-[#1A1A1A] md:text-3xl">
               Crafting Unforgettable <span className="text-gold">Culinary Experiences</span> Since 2001
             </h3>
-            <p className="mb-6 font-mono text-sm leading-relaxed text-muted-foreground">
+            <p className="mb-6 font-mono text-sm leading-relaxed text-[#1A1A1A]/70">
               VLN Catering and Event Management has been the preferred catering partner for
               Pune&apos;s most prestigious establishments. From intimate corporate lunches at
               EON IT Park to grand wedding celebrations at The Hyatt, we bring the authentic
               flavours of India to every table.
             </p>
-            <p className="mb-10 font-mono text-sm leading-relaxed text-muted-foreground">
+            <p className="mb-10 font-mono text-sm leading-relaxed text-[#1A1A1A]/70">
               Our commitment to hygiene, quality, and the art of traditional Indian cooking
               has earned us ISO certification and the trust of over 20 corporate clients
               across Pune. Every dish we serve is a homage to India&apos;s rich culinary
@@ -137,10 +137,10 @@ export default function AboutSection() {
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
                   <feature.icon className="mb-3 h-6 w-6 text-gold transition-transform group-hover:scale-110" />
-                  <h4 className="mb-1.5 font-sans text-sm font-semibold text-cream">
+                  <h4 className="mb-1.5 font-sans text-sm font-semibold text-[#1A1A1A]">
                     {feature.title}
                   </h4>
-                  <p className="font-mono text-xs leading-relaxed text-muted-foreground">
+                  <p className="font-mono text-xs leading-relaxed text-[#1A1A1A]/70">
                     {feature.description}
                   </p>
                 </div>

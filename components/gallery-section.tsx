@@ -204,7 +204,7 @@ export default function GallerySection() {
       <section
         id="gallery"
         ref={sectionRef}
-        className="relative bg-darker-bg py-24 lg:py-32"
+        className="relative bg-[#F3E5C8] py-24 lg:py-32"
       >
         <div className="absolute left-0 top-0 h-px w-full bg-gradient-to-r from-transparent via-gold/30 to-transparent" />
 
@@ -218,7 +218,7 @@ export default function GallerySection() {
             <span className="mb-4 inline-block font-mono text-xs uppercase tracking-[0.3em] text-gold">
               Gallery
             </span>
-            <h2 className="mb-6 font-sans text-3xl font-bold text-cream md:text-5xl">
+            <h2 className="mb-6 font-sans text-3xl font-bold text-[#1A1A1A] md:text-5xl">
               A Visual <span className="text-gold-gradient">Feast</span>
             </h2>
             <div className="mx-auto flex items-center justify-center gap-3">
@@ -226,7 +226,7 @@ export default function GallerySection() {
               <div className="h-1.5 w-1.5 rotate-45 bg-gold" />
               <div className="h-px w-12 bg-gold/40" />
             </div>
-            <p className="mx-auto mt-6 max-w-2xl font-mono text-sm leading-relaxed text-muted-foreground">
+            <p className="mx-auto mt-6 max-w-2xl font-mono text-sm leading-relaxed text-[#1A1A1A]/70">
               A glimpse into our world of exquisite flavours, elaborate setups, and unforgettable events.
             </p>
           </div>
@@ -269,9 +269,9 @@ export default function GallerySection() {
                         className="gallery-image-inner w-full h-full object-cover"
                       />
                     </div>
-                    <div className="absolute inset-0 bg-transparent transition-all duration-300 group-hover:bg-black/10" />
+                    <div className="absolute inset-0 bg-transparent transition-all duration-300 group-hover:bg-gold/10" />
                     <div className="absolute inset-0 flex items-end p-4 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                      <p className="font-mono text-xs text-cream">{img.alt}</p>
+                      <p className="font-mono text-xs text-[#1A1A1A]">{img.alt}</p>
                     </div>
                     {/* Gold corner accent */}
                     <div className="absolute left-0 top-0 h-0 w-0 border-l-2 border-t-2 border-gold/0 transition-all duration-500 group-hover:h-8 group-hover:w-8 group-hover:border-gold/60" />
@@ -287,11 +287,11 @@ export default function GallerySection() {
       {/* Lightbox */}
       {selectedImage && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4 backdrop-blur-sm"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-transparent p-4 backdrop-blur-sm"
           onClick={() => setSelectedImage(null)}
         >
           <button
-            className="absolute right-6 top-6 font-mono text-2xl text-white/60 transition-colors hover:text-white"
+            className="absolute right-6 top-6 font-mono text-2xl text-[#1A1A1A]/60 transition-colors hover:text-[#1A1A1A]"
             onClick={() => setSelectedImage(null)}
             aria-label="Close lightbox"
           >

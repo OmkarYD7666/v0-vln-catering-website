@@ -192,10 +192,10 @@ function TestimonialCard({ testimonial }: { testimonial: typeof testimonials[0] 
           {testimonial.initials}
         </div>
         <div className="min-w-0 flex-1">
-          <h4 className="truncate font-sans text-base font-semibold text-cream">
+          <h4 className="truncate font-sans text-base font-semibold text-[#1A1A1A]">
             {testimonial.name}
           </h4>
-          <p className="truncate font-mono text-xs text-muted-foreground">
+          <p className="truncate font-mono text-xs text-[#1A1A1A]/70">
             {testimonial.company}
           </p>
           <span className="inline-block rounded-sm bg-[#C9A227]/10 px-2 py-0.5 font-mono text-[10px] uppercase tracking-wider text-[#C9A227]">
@@ -210,7 +210,7 @@ function TestimonialCard({ testimonial }: { testimonial: typeof testimonials[0] 
       </div>
 
       {/* Review text */}
-      <p className="line-clamp-4 font-mono text-sm leading-relaxed text-cream/80">
+      <p className="line-clamp-4 font-mono text-sm leading-relaxed text-[#1A1A1A]/80">
         &ldquo;{testimonial.review}&rdquo;
       </p>
     </div>
@@ -293,7 +293,7 @@ export default function ClientsSection() {
             <span className="mb-4 inline-block font-mono text-xs uppercase tracking-[0.3em] text-[#C9A227]">
               Trusted Partners
             </span>
-            <h2 className="mb-6 font-sans text-3xl font-bold text-cream md:text-5xl">
+            <h2 className="mb-6 font-sans text-3xl font-bold text-[#1A1A1A] md:text-5xl">
               Our <span className="text-gold-gradient">Clients</span>
             </h2>
             <div className="mx-auto flex items-center justify-center gap-3">
@@ -301,7 +301,7 @@ export default function ClientsSection() {
               <div className="h-1.5 w-1.5 rotate-45 bg-[#C9A227]" />
               <div className="h-px w-12 bg-[#C9A227]/40" />
             </div>
-            <p className="mx-auto mt-6 max-w-2xl font-mono text-sm leading-relaxed text-muted-foreground">
+            <p className="mx-auto mt-6 max-w-2xl font-mono text-sm leading-relaxed text-[#1A1A1A]/70">
               Proudly serving Pune&apos;s finest hotels, corporate organizations, and distinguished families for over 20 years.
             </p>
           </div>
@@ -326,7 +326,7 @@ export default function ClientsSection() {
             <span className="mb-4 inline-block font-mono text-xs uppercase tracking-[0.3em] text-[#C9A227]">
               Testimonials
             </span>
-            <h2 className="mb-6 font-sans text-3xl font-bold text-cream md:text-5xl">
+            <h2 className="mb-6 font-sans text-3xl font-bold text-[#1A1A1A] md:text-5xl">
               What Our <span className="text-gold-gradient">Clients Say</span>
             </h2>
             <div className="mx-auto flex items-center justify-center gap-3">
@@ -334,7 +334,7 @@ export default function ClientsSection() {
               <div className="h-1.5 w-1.5 rotate-45 bg-[#C9A227]" />
               <div className="h-px w-12 bg-[#C9A227]/40" />
             </div>
-            <p className="mx-auto mt-6 max-w-2xl font-mono text-sm leading-relaxed text-muted-foreground">
+            <p className="mx-auto mt-6 max-w-2xl font-mono text-sm leading-relaxed text-[#1A1A1A]/70">
               Discover why Pune&apos;s most discerning hosts trust VLN Catering to create
               unforgettable culinary experiences for their most important occasions.
             </p>

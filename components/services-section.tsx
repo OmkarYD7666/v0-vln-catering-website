@@ -86,7 +86,7 @@ export default function ServicesSection() {
           <span className="mb-4 inline-block font-mono text-xs uppercase tracking-[0.3em] text-gold">
             Our Services
           </span>
-          <h2 className="mb-6 font-sans text-3xl font-bold text-cream md:text-5xl">
+          <h2 className="mb-6 font-sans text-3xl font-bold text-[#1A1A1A] md:text-5xl">
             A Feast for <span className="text-gold-gradient">Every Occasion</span>
           </h2>
           <div className="mx-auto flex items-center justify-center gap-3">
@@ -94,7 +94,7 @@ export default function ServicesSection() {
             <div className="h-1.5 w-1.5 rotate-45 bg-gold" />
             <div className="h-px w-12 bg-gold/40" />
           </div>
-          <p className="mx-auto mt-6 max-w-2xl font-mono text-sm leading-relaxed text-muted-foreground">
+          <p className="mx-auto mt-6 max-w-2xl font-mono text-sm leading-relaxed text-[#1A1A1A]/70">
             From traditional vegetarian thalis to interactive live counters, we offer a
             comprehensive range of catering services designed to make your event truly memorable.
           </p>
@@ -130,10 +130,10 @@ export default function ServicesSection() {
 
               {/* Content */}
               <div className="p-6">
-                <h3 className="mb-3 font-sans text-xl font-semibold text-cream transition-colors group-hover:text-gold">
+                <h3 className="mb-3 font-sans text-xl font-semibold text-[#1A1A1A] transition-colors group-hover:text-gold">
                   {service.title}
                 </h3>
-                <p className="font-mono text-xs leading-relaxed text-muted-foreground">
+                <p className="font-mono text-xs leading-relaxed text-[#1A1A1A]/70">
                   {service.description}
                 </p>
               </div>
@@ -147,7 +147,7 @@ export default function ServicesSection() {
             isVisible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
           }`}
         >
-          <p className="mb-6 font-mono text-sm text-muted-foreground">
+          <p className="mb-6 font-mono text-sm text-[#1A1A1A]/70">
             Looking for a custom menu? We tailor every event to your unique preferences.
           </p>
           <a

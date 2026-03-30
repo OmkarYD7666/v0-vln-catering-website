@@ -65,13 +65,13 @@ function VideoModal({
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4 backdrop-blur-sm"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-transparent p-4 backdrop-blur-sm"
       onClick={onClose}
     >
       {/* Close button */}
       <button
         onClick={onClose}
-        className="absolute right-4 top-4 z-50 flex h-10 w-10 items-center justify-center rounded-full bg-black/50 text-white transition-all hover:bg-black/70 hover:text-gold"
+        className="absolute right-4 top-4 z-50 flex h-10 w-10 items-center justify-center rounded-full bg-transparent text-[#1A1A1A] transition-all hover:bg-gold/20 hover:text-gold"
         aria-label="Close video"
       >
         <X className="h-5 w-5" />
@@ -93,10 +93,10 @@ function VideoModal({
           Your browser does not support the video tag.
         </video>
         <div className="mt-4 text-center">
-          <h3 className="font-sans text-xl font-semibold text-cream">
+          <h3 className="font-sans text-xl font-semibold text-[#1A1A1A]">
             {video.title}
           </h3>
-          <p className="mt-2 font-mono text-sm text-muted-foreground">
+          <p className="mt-2 font-mono text-sm text-[#1A1A1A]/70">
             {video.description}
           </p>
         </div>
@@ -134,9 +134,9 @@ function VideoCard({
         />
 
         {/* Overlay with Play Button */}
-        <div className="absolute inset-0 flex items-center justify-center bg-black/20 transition-all group-hover:bg-black/40">
+        <div className="absolute inset-0 flex items-center justify-center bg-transparent transition-all group-hover:bg-gold/10">
           <button
-            className="flex h-16 w-16 items-center justify-center rounded-full border-2 border-gold/60 bg-black/50 text-gold backdrop-blur-sm transition-all group-hover:scale-110 group-hover:border-gold group-hover:bg-black/70"
+            className="flex h-16 w-16 items-center justify-center rounded-full border-2 border-gold/60 bg-gold/20 text-gold backdrop-blur-sm transition-all group-hover:scale-110 group-hover:border-gold group-hover:bg-gold/30"
             aria-label="Play video"
           >
             <Play className="ml-1 h-6 w-6" />
@@ -145,10 +145,10 @@ function VideoCard({
       </div>
 
       <div className="p-6">
-        <h3 className="mb-2 font-sans text-lg font-semibold text-cream">
+        <h3 className="mb-2 font-sans text-lg font-semibold text-[#1A1A1A]">
           {video.title}
         </h3>
-        <p className="font-mono text-xs leading-relaxed text-muted-foreground">
+        <p className="font-mono text-xs leading-relaxed text-[#1A1A1A]/70">
           {video.description}
         </p>
       </div>
@@ -198,7 +198,7 @@ export default function VideoSection() {
             <span className="mb-4 inline-block font-mono text-xs uppercase tracking-[0.3em] text-gold">
               Experience
             </span>
-            <h2 className="mb-6 font-sans text-3xl font-bold text-cream md:text-5xl">
+            <h2 className="mb-6 font-sans text-3xl font-bold text-[#1A1A1A] md:text-5xl">
               See Us <span className="text-gold-gradient">In Action</span>
             </h2>
             <div className="mx-auto flex items-center justify-center gap-3">
@@ -206,7 +206,7 @@ export default function VideoSection() {
               <div className="h-1.5 w-1.5 rotate-45 bg-gold" />
               <div className="h-px w-12 bg-gold/40" />
             </div>
-            <p className="mx-auto mt-6 max-w-2xl font-mono text-sm leading-relaxed text-muted-foreground">
+            <p className="mx-auto mt-6 max-w-2xl font-mono text-sm leading-relaxed text-[#1A1A1A]/70">
               Watch how we orchestrate grand culinary experiences, from meticulous
               preparation to flawless execution.
             </p>
