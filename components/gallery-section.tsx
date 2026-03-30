@@ -18,6 +18,28 @@ const galleryImages = [
   { src: "/images/gallery/image12.jpg", alt: "Indian catering thali", span: "md:col-span-2" },
   { src: "/images/gallery/image13.jpg", alt: "Traditional catering setup", span: "" },
   { src: "/images/gallery/image14.jpg", alt: "Luxury food presentation", span: "" }
+  { src: "/images/gallery/image15.jpg", alt: "Catering event setup", span: "md:col-span-2 md:row-span-2" },
+  { src: "/images/gallery/image16.jpg", alt: "CHAAT COUNTER", span: "md:col-span-2" },
+  { src: "/images/gallery/image17.jpg", alt: "hightea", span: "" },
+  { src: "/images/gallery/image18.jpg", alt: "hightea", span: "" },
+  { src: "/images/gallery/image19.jpg", alt: "Premium Falooda", span: "md:col-span-2" },
+  { src: "/images/gallery/image20.jpg", alt: "healthy coconut", span: "" },
+  { src: "/images/gallery/image21.jpg", alt: "Corporate catering arrangement", span: "" },
+  { src: "/images/gallery/image22.jpg", alt: "Corporate catering service", span: "md:col-span-2" },
+  { src: "/images/gallery/image23.jpg", alt: "Corporate preparing dishes", span: "" },
+  { src: "/images/gallery/image24.jpg", alt: "Buffet food presentation", span: "" },
+  { src: "/images/gallery/image25.jpg", alt: "Corporate catering service", span: "" },
+  { src: "/images/gallery/image26.jpg", alt: "Corporate catering service", span: "md:col-span-2" },
+  { src: "/images/gallery/image27.jpg", alt: "Corporate chaat catering setup", span: "" },
+  { src: "/images/gallery/image28.jpg", alt: "Corporate chaat catering setup", span: "" }
+  { src: "/images/gallery/image29.jpg", alt: "Catering event setup", span: "md:col-span-2 md:row-span-2" },
+  { src: "/images/gallery/image30.jpg", alt: "Indian catering buffet", span: "md:col-span-2" },
+  { src: "/images/gallery/image31.jpg", alt: "Chaat counter", span: "" },
+  { src: "/images/gallery/image32.jpg", alt: "Chaat counter", span: "" },
+  { src: "/images/gallery/image33.jpg", alt: "Chaat counter", span: "md:col-span-2" },
+  { src: "/images/gallery/image34.jpg", alt: "Chaat counter", span: "" },
+  { src: "/images/gallery/image35.jpg", alt: "Chaat counter", span: "" },
+  { src: "/images/gallery/image36.jpg", alt: "Event catering service", span: "md:col-span-2" },
 ]
 
 export default function GallerySection() {
