@@ -101,10 +101,10 @@ export default function HeroSection() {
           </div>
 
           {/* Headline */}
-          <h1 className="mb-4 font-sans text-4xl font-bold leading-tight tracking-tight text-[#1A1A1A] md:text-6xl lg:text-7xl">
+          <h1 className="mb-4 font-sans text-4xl font-bold leading-tight tracking-tight text-white md:text-6xl lg:text-7xl">
             <span className="text-gold-gradient">Exquisite</span> Indian Flavours
           </h1>
-          <p className="mb-2 font-sans text-2xl font-light text-[#1A1A1A]/80 md:text-3xl">
+          <p className="mb-2 font-sans text-2xl font-light text-white/90 md:text-3xl">
             for Every Grand Occasion
           </p>
 
@@ -116,7 +116,7 @@ export default function HeroSection() {
           </div>
 
           {/* Sub text */}
-          <p className="mx-auto mb-10 max-w-2xl font-mono text-sm leading-relaxed text-[#1A1A1A]/70 md:text-base">
+          <p className="mx-auto mb-10 max-w-2xl font-mono text-sm leading-relaxed text-white/90 md:text-base">
             Premium vegetarian catering services delivering authentic Indian taste.
             Trusted by Pune&apos;s finest hotels, IT corporates, and event venues.
           </p>
@@ -186,7 +186,7 @@ function StatItem({
       <span className="text-gold-gradient font-sans text-3xl font-bold md:text-4xl">
         {count}{stat.suffix}
       </span>
-      <span className="mt-1 font-mono text-xs uppercase tracking-wider text-[#1A1A1A]/60">
+      <span className="mt-1 font-mono text-xs uppercase tracking-wider text-white/70">
         {stat.label}
       </span>
     </div>
