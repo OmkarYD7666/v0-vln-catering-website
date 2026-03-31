@@ -52,7 +52,9 @@ export default function Navbar() {
             <p className="text-gold-gradient font-sans text-lg font-bold tracking-wider lg:text-xl">
               VLN Caterers
             </p>
-            <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
+            <p className={`font-mono text-[10px] uppercase tracking-[0.2em] transition-colors duration-500 ${
+              isScrolled ? "text-muted-foreground" : "text-white/80"
+            }`}>
               {"& Event Management"}
             </p>
           </div>
@@ -89,7 +91,9 @@ export default function Navbar() {
             <li key={link.href}>
               <a
                 href={link.href}
-                className="group relative font-mono text-sm uppercase tracking-wider text-foreground/80 transition-colors hover:text-gold"
+                className={`group relative font-mono text-sm uppercase tracking-wider transition-colors hover:text-gold ${
+                  isScrolled ? "text-foreground/80" : "text-white"
+                }`}
               >
                 {link.label}
                 <span className="absolute -bottom-1 left-0 h-px w-0 bg-gold transition-all duration-300 group-hover:w-full" />
