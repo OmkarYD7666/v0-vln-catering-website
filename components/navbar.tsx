@@ -48,11 +48,11 @@ export default function Navbar() {
             {/* Shine overlay */}
             <div className="logo-shine absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent skew-x-12" />
           </div>
-          <div className="hidden sm:block">
-            <p className="text-gold-gradient font-sans text-lg font-bold tracking-wider lg:text-xl">
+          <div className="block">
+            <p className="text-gold-gradient font-sans text-sm font-bold tracking-wider sm:text-lg lg:text-xl">
               VLN Caterers
             </p>
-            <p className={`font-mono text-[10px] uppercase tracking-[0.2em] transition-colors duration-500 ${
+            <p className={`font-mono text-[8px] sm:text-[10px] uppercase tracking-[0.15em] sm:tracking-[0.2em] transition-colors duration-500 ${
               isScrolled ? "text-muted-foreground" : "text-white/80"
             }`}>
               {"& Event Management"}
