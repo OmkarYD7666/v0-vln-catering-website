@@ -17,7 +17,7 @@ const galleryImages = [
   { src: "/images/gallery/image11.jpg", alt: "Premium catering dishes", span: "" },
   { src: "/images/gallery/image12.jpg", alt: "Indian catering thali", span: "md:col-span-2" },
   { src: "/images/gallery/image13.jpg", alt: "Traditional catering setup", span: "" },
-  { src: "/images/gallery/image14.jpg", alt: "Luxury food presentation", span: "" }
+  { src: "/images/gallery/image14.jpg", alt: "Luxury food presentation", span: "" },
   { src: "/images/gallery/image15.jpg", alt: "Catering event setup", span: "md:col-span-2 md:row-span-2" },
   { src: "/images/gallery/image16.jpg", alt: "CHAAT COUNTER", span: "md:col-span-2" },
   { src: "/images/gallery/image17.jpg", alt: "hightea", span: "" },
@@ -31,7 +31,7 @@ const galleryImages = [
   { src: "/images/gallery/image25.jpg", alt: "Corporate catering service", span: "" },
   { src: "/images/gallery/image26.jpg", alt: "Corporate catering service", span: "md:col-span-2" },
   { src: "/images/gallery/image27.jpg", alt: "Corporate chaat catering setup", span: "" },
-  { src: "/images/gallery/image28.jpg", alt: "Corporate chaat catering setup", span: "" }
+  { src: "/images/gallery/image28.jpg", alt: "Corporate chaat catering setup", span: "" },
   { src: "/images/gallery/image29.jpg", alt: "Catering event setup", span: "md:col-span-2 md:row-span-2" },
   { src: "/images/gallery/image30.jpg", alt: "Indian catering buffet", span: "md:col-span-2" },
   { src: "/images/gallery/image31.jpg", alt: "Chaat counter", span: "" },
