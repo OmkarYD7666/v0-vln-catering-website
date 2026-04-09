@@ -18,7 +18,7 @@ const contactMethods = [
     label: "Call Us",
     value: "+91 88888 72700",
     href: "tel:+918888872700",
-    description: "Mon-Sat, 9 AM - 9 PM",
+    description: "Open 365 Days",
   },
   {
     icon: MessageCircle,
