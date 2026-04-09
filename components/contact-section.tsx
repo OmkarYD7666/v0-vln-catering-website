@@ -23,22 +23,22 @@ const contactMethods = [
   {
     icon: MessageCircle,
     label: "WhatsApp",
-    value: "+91 96731 30070",
+    value: "+91 8888872700",
     href: "https://wa.me/919673130070?text=Hello%20VLN%20Catering!%20I%20would%20like%20to%20inquire%20about%20your%20catering%20services.",
     description: "Quick response guaranteed",
   },
   {
     icon: Mail,
     label: "Email Us",
-    value: "operations@vln.com",
-    href: "mailto:operations@vln.com",
+    value: "vlneventmangement@gmail.com",
+    href: "mailto:vlneventmangement@gmail.com",
     description: "We reply within 24 hours",
   },
   {
     icon: MapPin,
     label: "Visit Us",
-    value: "Anand Nagar Lane No.03 Wadgaon Sheri Pune 411014",
-    href: "https://maps.google.com/?q=Anand+Nagar+Lane+No.03+Wadgaon+Sheri+Pune+411014",
+    value: "Anand Park, Wadgaon Sheri, Pune, Maharashtra 411014",
+    href: "https://maps.app.goo.gl/he1AhmMhctH4bXaW6?g_st=awb",
     description: "Walk-in consultations welcome",
   },
 ]
@@ -179,7 +179,7 @@ export default function ContactSection() {
           >
             <div className="relative overflow-hidden rounded-sm border border-border/30">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3779.5438903428254!2d73.86453987520405!3d18.577611682498568!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c4e5d5d5d5d5%3A0x5d5d5d5d5d5d5d5d!2sWadgaon%20Sheri%2C%20Pune!5e0!3m2!1sen!2sin!4v1700000000000"
+                src="https://www.google.com/maps/place/VLN+caterers/@18.5527526,73.9218954,17z/data=!3m1!4b1!4m6!3m5!1s0x3bc2c100335e84c7:0xb6ed515066dc3bce!8m2!3d18.5527526!4d73.9218954!16s%2Fg%2F11z4btjmnq!18m1!1e1?entry=ttu&g_ep=EgoyMDI2MDQwNi4wIKXMDSoASAFQAw%3D%3D"
                 width="100%"
                 height="400"
                 style={{ border: 0, filter: "sepia(15%) saturate(80%) brightness(1.02)" }}
@@ -201,7 +201,7 @@ export default function ContactSection() {
                       Pune, Maharashtra, India
                     </p>
                     <a
-                      href="https://maps.google.com/?q=Anand+Nagar+Lane+No.03+Wadgaon+Sheri+Pune+411014"
+                      href="https://maps.app.goo.gl/he1AhmMhctH4bXaW6?g_st=awb"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="mt-2 inline-block font-mono text-xs text-gold underline underline-offset-4 transition-colors hover:text-gold-light"
@@ -215,7 +215,7 @@ export default function ContactSection() {
 
             {/* Quick WhatsApp CTA */}
             <a
-              href="https://wa.me/919673130070?text=Hello%20VLN%20Catering!%20I%20would%20like%20to%20inquire%20about%20your%20catering%20services."
+              href="https://wa.me/918888872700?text=Hello%20VLN%20Catering!%20I%20would%20like%20to%20inquire%20about%20your%20catering%20services."
               target="_blank"
               rel="noopener noreferrer"
               className="mt-6 flex items-center justify-center gap-3 rounded-sm bg-[#25D366] px-6 py-4 font-mono text-sm uppercase tracking-wider text-white transition-all hover:bg-[#22bf5b] hover:shadow-lg hover:shadow-[#25D366]/20"
