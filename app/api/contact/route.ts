@@ -72,9 +72,9 @@ export async function GET() {
   return NextResponse.json({
     business: "VLN Catering & Event Management",
     location: "Pune, Maharashtra, India",
-    phone: "+91 98765 43210",
-    email: "info@vlncatering.com",
-    whatsapp: "https://wa.me/919876543210",
+    phone: "+91 88888 72700",
+    email: "vlneventmangement@gmail.com",
+    whatsapp: "https://wa.me/918888872700",
     iso: "ISO 22000:2018 Certified",
     services: [
       "Pure Veg Delicacies",
