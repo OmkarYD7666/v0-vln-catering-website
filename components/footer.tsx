@@ -47,7 +47,7 @@ export default function Footer() {
             </div>
             <p className="mb-4 font-mono text-xs leading-relaxed text-[#1A1A1A]/70">
               ISO Certified premium catering services delivering authentic Indian
-              vegetarian cuisine to Pune&apos;s finest hotels, corporates, and events since 2009.
+              vegetarian cuisine to Pune&apos;s finest hotels, corporates, and events since 2001.
             </p>
             <p className="mb-6 font-mono text-[10px] text-[#1A1A1A]/70">
               <span className="text-gold font-semibold">Managing Director:</span> Mr. Gajanan Sharma
@@ -117,22 +117,22 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="https://wa.me/919673130070"
+                  href="https://wa.me/918888872700"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 font-mono text-xs text-[#1A1A1A]/70 transition-colors hover:text-gold"
                 >
                   <MessageCircle className="h-4 w-4 flex-shrink-0 text-gold/60" />
-                  +91 96731 30070
+                  +91 8888872700
                 </a>
               </li>
               <li>
                 <a
-                  href="mailto:operations@vln.com"
+                  href="mailto:vlneventmangement@gmail.com"
                   className="flex items-center gap-3 font-mono text-xs text-[#1A1A1A]/70 transition-colors hover:text-gold"
                 >
                   <Mail className="h-4 w-4 flex-shrink-0 text-gold/60" />
-                  operations@vln.com
+                  vlneventmangement@gmail.com
                 </a>
               </li>
               <li>
