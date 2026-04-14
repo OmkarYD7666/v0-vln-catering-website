@@ -24,7 +24,7 @@ const contactMethods = [
     icon: MessageCircle,
     label: "WhatsApp",
     value: "+91 8888872700",
-    href: "https://wa.me/919673130070?text=Hello%20VLN%20Catering!%20I%20would%20like%20to%20inquire%20about%20your%20catering%20services.",
+    href: "https://wa.me/918888872700?text=Hello%20VLN%20Catering!%20I%20would%20like%20to%20inquire%20about%20your%20catering%20services.",
     description: "Quick response guaranteed",
   },
   {
