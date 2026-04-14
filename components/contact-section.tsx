@@ -178,17 +178,17 @@ export default function ContactSection() {
             }`}
           >
             <div className="relative overflow-hidden rounded-sm border border-border/30">
-              <iframe
-                src="https://www.google.com/maps/place/VLN+caterers/@18.5527526,73.9218954,17z/data=!3m1!4b1!4m6!3m5!1s0x3bc2c100335e84c7:0xb6ed515066dc3bce!8m2!3d18.5527526!4d73.9218954!16s%2Fg%2F11z4btjmnq!18m1!1e1?entry=ttu&g_ep=EgoyMDI2MDQwNi4wIKXMDSoASAFQAw%3D%3D"
-                width="100%"
-                height="400"
-                style={{ border: 0, filter: "sepia(15%) saturate(80%) brightness(1.02)" }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="VLN Catering Location - Anand Nagar Lane No.03 Wadgaon Sheri Pune"
-                className="rounded-sm"
-              />
+          <iframe
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3782.356391444167!2d73.91899177519253!3d18.557999782542563!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c13d7d740001%3A0xc66699a7776510a7!2sAnand%20Nagar%20Lane%20No.03%2C%20Wadgaon%20Sheri%2C%20Pune%20411014!5e0!3m2!1sen!2sin!4v1715600000000!5m2!1sen!2sin"
+  width="100%"
+  height="400"
+  style={{ border: 0, filter: "sepia(15%) saturate(80%) brightness(1.02)" }}
+  allowFullScreen
+  loading="lazy"
+  referrerPolicy="no-referrer-when-downgrade"
+  title="VLN Catering Location - Anand Nagar Lane No.03 Wadgaon Sheri Pune"
+  className="rounded-sm"
+/>
               {/* Map overlay info */}
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-card via-card/90 to-transparent p-6 pt-12">
                 <div className="flex items-start gap-3">
