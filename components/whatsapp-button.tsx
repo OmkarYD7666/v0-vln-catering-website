@@ -38,12 +38,14 @@ export default function WhatsAppButton() {
         </div>
       )}
 
-      {/* WhatsApp Button */}
-      <a
-href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '918888872700'}?text=Hello%20VLN%20Catering!%20I%20would%20like%20to%20inquire%20about%20your%20catering%20services.`}        rel="noopener noreferrer"
-        className="group flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] shadow-lg shadow-[#25D366]/30 transition-all hover:scale-110 hover:shadow-xl hover:shadow-[#25D366]/40"
-        aria-label="Chat on WhatsApp"
-      >
+{/* WhatsApp Button */}
+<a 
+  href="https://wa.me/918888872700?text=Hello%20VLN%20Catering!%20I%20would%20like%20to%20inquire%20about%20your%20catering%20services." 
+  target="_blank" 
+  rel="noopener noreferrer" 
+  className="group flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] shadow-lg shadow-[#25D366]/30 transition-all hover:scale-110 hover:shadow-xl hover:shadow-[#25D366]/40" 
+  aria-label="Chat on WhatsApp" 
+>
         <MessageCircle className="h-6 w-6 text-white transition-transform group-hover:scale-110" />
         {/* Pulse ring */}
         <span className="absolute h-14 w-14 animate-ping rounded-full bg-[#25D366]/30" />
