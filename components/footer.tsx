@@ -179,35 +179,39 @@ export default function Footer() {
             </a>
           </div>
         </div>
+{/* Bottom Bar */}
+      <div className="mt-8 border-t border-border/30 pt-8">
+        <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
+          {/* 1. Copyright Part */}
+          <p className="font-mono text-xs text-[#1A1A1A]/70">
+            &copy; {new Date().getFullYear()} VLN Catering & Event Management. All rights reserved.
+          </p>
 
- {/* Bottom Bar */}
-<div className="mt-8 border-t border-border/30 pt-8">
-  <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
-    
-    {/* 1. Copyright Part */}
-    <p className="font-mono text-xs text-[#1A1A1A]/70">
-      &copy; {new Date().getFullYear()} VLN Catering & Event Management. All rights reserved.
-    </p>
-    
-    {/* 2. My Signature and Passion Note Part */}
-    <div className="flex flex-col items-center md:items-end gap-1">
-      <div className="flex items-center gap-2">
-        <div className="h-1 w-1 rounded-full bg-gold/40" />
-        <p className="font-mono text-[10px] uppercase tracking-wider text-[#1A1A1A]/70">
-          Crafted with passion in Pune, India
-        </p>
-        <div className="h-1 w-1 rounded-full bg-gold/40" />
+          {/* 2. My Signature and Passion Note Part */}
+          <div className="flex flex-col items-center md:items-end gap-1">
+            <div className="flex items-center gap-2">
+              <div className="h-1 w-1 rounded-full bg-gold/40" />
+              <p className="font-mono text-[10px] uppercase tracking-wider text-[#1A1A1A]/70">
+                Crafted with passion in Pune, India
+              </p>
+              <div className="h-1 w-1 rounded-full bg-gold/40" />
+            </div>
+
+            {/* My Branding Line */}
+            <p className="font-mono text-[9px] text-[#1A1A1A]/50 tracking-tight">
+              Designed & Developed by 
+              <a 
+                href="https://www.linkedin.com/in/omkar-yadav-6432a1230?utm_source=share_via&utm_content=profile&utm_medium=member_android" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="ml-1 text-gold font-semibold hover:underline"
+              >
+                Omkar S. Yadav
+              </a>
+            </p>
+          </div>
+        </div>
       </div>
-      
-      {/* My Branding Line */}
-      <p className="font-mono text-[9px] text-[#1A1A1A]/50 tracking-tight">
-        Designed & Developed by 
-       <a href="https://www.linkedin.com/in/omkar-yadav-6432a1230?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer" className="ml-1 text-gold font-semibold hover:underline">
-  Omkar S. Yadav
-</a>
-      </p>
     </div>
-
-  </div>
-</div>
-    </footer>
+  </footer>
+)
