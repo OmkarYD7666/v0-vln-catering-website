@@ -201,8 +201,7 @@ export default function Footer() {
             <p className="font-mono text-[9px] text-[#1A1A1A]/50 tracking-tight">
               Designed & Developed by 
               <a 
-                href="https://www.linkedin.com/in/omkar-yadav-6432a1230?utm_source=share_via&utm_content=profile&utm_medium=member_android" 
-                target="_blank" 
+href="https://www.linkedin.com/in/omkar-yadav-6432a1230?utm_source=share_via&utm_content=profile&utm_medium=member_android"                target="_blank" 
                 rel="noopener noreferrer" 
                 className="ml-1 text-gold font-semibold hover:underline"
               >
