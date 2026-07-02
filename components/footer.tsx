@@ -192,7 +192,7 @@ export default function Footer() {
             <div className="flex items-center gap-2">
               <div className="h-1 w-1 rounded-full bg-gold/40" />
               <p className="font-mono text-[10px] uppercase tracking-wider text-[#1A1A1A]/70">
-                Crafted with passion in Pune, India
+                Designed with passion in Pune, India
               </p>
               <div className="h-1 w-1 rounded-full bg-gold/40" />
             </div>
